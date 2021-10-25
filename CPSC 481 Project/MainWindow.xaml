@@ -3,10 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CPSC_481_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1024" Width="1366">
+
+    <!--MAIN WINDOW-->
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height ="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Diverse" FontSize="35" TextAlignment="Right" Height="40" Width="482"/>
+        </Label>
+
+        <!--PAY/CALL SERVER BUTTONS HERE-->
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Call Server" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
+            <Button Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
+        </Grid>
+
+
+
     </Grid>
 </Window>
