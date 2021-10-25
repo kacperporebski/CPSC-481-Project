@@ -34,9 +34,9 @@ namespace CPSC_481_Project
             OrderInformation.ItemsSource = CurrentOrder;
         }
 
-        public void AddToOrder(FoodItem item)
+        public void AddToOrder(FoodItemView item)
         {
-            _currentOrder.Add(new OrderInformation(item.Item.Text, double.Parse(item.Price.Text.Split('$')[1])));
+            _currentOrder.Add(new OrderInformation(item.Name, double.Parse(item.Price.Split('$')[1])));
             OnPropertyChanged();
         }
 

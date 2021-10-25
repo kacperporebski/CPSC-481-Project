@@ -21,7 +21,7 @@ namespace CPSC_481_Project
     public partial class MainWindow : Window
     {
         private bool AddingToOrder = false;
-
+        private bool FiltersOpen = false;
 
         public MainWindow()
         {
@@ -36,9 +36,10 @@ namespace CPSC_481_Project
             
         }
 
-        private void AddItemScreen(FoodItem item)
+        private void AddItemScreen(FoodItemView item)
         {
             AddingToOrder = true;
+            ItemConfig.DataContext = item;
             ChangeVisibilities();
         }
 
@@ -58,9 +59,11 @@ namespace CPSC_481_Project
                 ItemConfig.Visibility = Visibility.Collapsed;
                 BackButton.Visibility = Visibility.Collapsed;
             }
+
+            FilterOptions.Visibility = FiltersOpen ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void AddToOrder(FoodItem item)
+        private void AddToOrder(FoodItemView item)
         {
             Orders.AddToOrder(item);
             AddingToOrder = false;
@@ -72,5 +75,12 @@ namespace CPSC_481_Project
             AddingToOrder = false;
             ChangeVisibilities();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            FiltersOpen = !FiltersOpen;
+            ChangeVisibilities();
+        }
+
     }
 }

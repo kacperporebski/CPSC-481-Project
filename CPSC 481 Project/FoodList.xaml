@@ -14,8 +14,8 @@
                     <UniformGrid Columns="2" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
                     <local:FoodItem/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

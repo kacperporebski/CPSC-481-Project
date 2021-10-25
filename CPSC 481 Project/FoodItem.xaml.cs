@@ -24,14 +24,6 @@ namespace CPSC_481_Project
         {
             InitializeComponent();
         }
-        
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            Ordered?.Invoke(this);
-        }
 
-        public event FoodItemOrdered Ordered;
-
-        public delegate void FoodItemOrdered(FoodItem item);
     }
 }

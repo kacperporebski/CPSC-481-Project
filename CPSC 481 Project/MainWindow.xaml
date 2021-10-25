@@ -15,11 +15,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
 
         <!--MENU-->
-        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
 
         <!--ITEM CONFIGURATION-->
         <local:ItemConfiguration x:Name="ItemConfig" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
@@ -32,7 +33,7 @@
         <Button x:Name="BackButton" Grid.Row="0" Grid.Column="0" Content="Back" Click="BackButton_OnClick"/>
 
         <!--PAY/CALL SERVER BUTTONS HERE-->
-        <Grid Grid.Row="0" Grid.Column="2">
+        <Grid Grid.Row="0" Grid.Column="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -41,8 +42,27 @@
             <Button Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
         </Grid>
 
-        <!--ORDER INFORMATION-->
-        <local:OrderInfo x:Name="Orders"  Grid.Row="1" Grid.Column="2"></local:OrderInfo>
+        <!--FILTER-->
+        <DockPanel x:Name="Filters" Grid.Row="1" Grid.Column="2" Height="150" VerticalAlignment="Top" >
+            <Button Content="Filters" HorizontalContentAlignment="Center" Click="ButtonBase_OnClick">
+                <Button.LayoutTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90" />
+                        <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                    </TransformGroup>
+                </Button.LayoutTransform>
+            </Button>
+        </DockPanel>
 
+        <ListBox x:Name="FilterOptions" Grid.Column="1" HorizontalAlignment="Left" Height="150" Margin="637,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="191">
+            <CheckBox Content="Gluten Free" Height="27" Width="149"/>
+            <CheckBox Content="Lactose Free" Height="27" Width="149"/>
+            <CheckBox Content="Peanut Free" Height="27" Width="149"/>
+            <CheckBox Content="Not Spicy" Height="27" Width="149"/>
+        </ListBox>
+
+
+        <!--ORDER INFORMATION-->
+        <local:OrderInfo x:Name="Orders"  Grid.Row="1" Grid.Column="3"></local:OrderInfo>
     </Grid>
 </Window>

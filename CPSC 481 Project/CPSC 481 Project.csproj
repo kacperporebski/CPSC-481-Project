@@ -63,6 +63,7 @@
     <Compile Include="FoodItem.xaml.cs">
       <DependentUpon>FoodItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoodItemView.cs" />
     <Compile Include="FoodList.xaml.cs">
       <DependentUpon>FoodList.xaml</DependentUpon>
     </Compile>
@@ -73,6 +74,7 @@
       <DependentUpon>OrderInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
