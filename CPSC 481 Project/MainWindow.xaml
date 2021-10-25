@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="1024" Width="1366">
-
     <!--MAIN WINDOW-->
     <Grid>
         <Grid.RowDefinitions>
@@ -18,9 +18,18 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="1">
-            <TextBlock Text="Diverse" FontSize="35" TextAlignment="Right" Height="40" Width="482"/>
+        <!--MENU-->
+        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <!--ITEM CONFIGURATION-->
+        <local:ItemConfiguration x:Name="ItemConfig" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <!--CATEGORIES/BACK-->
+        <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center">
+            <TextBlock Text="Diverse" FontSize="35" TextAlignment="Right" Height="40"/>
         </Label>
+        <local:CategoriesDropDown x:Name="Categories" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+        <Button x:Name="BackButton" Grid.Row="0" Grid.Column="0" Content="Back" Click="BackButton_OnClick"/>
 
         <!--PAY/CALL SERVER BUTTONS HERE-->
         <Grid Grid.Row="0" Grid.Column="2">
@@ -32,7 +41,8 @@
             <Button Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
         </Grid>
 
-
+        <!--ORDER INFORMATION-->
+        <local:OrderInfo x:Name="Orders"  Grid.Row="1" Grid.Column="2"></local:OrderInfo>
 
     </Grid>
 </Window>

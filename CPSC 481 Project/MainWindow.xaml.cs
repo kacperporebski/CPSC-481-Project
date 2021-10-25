@@ -20,9 +20,57 @@ namespace CPSC_481_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool AddingToOrder = false;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            ChangeVisibilities();
+
+            foreach (var item in FoodList.FoodItems)
+            {
+                item.Ordered += AddItemScreen;
+            }
+
+            
+        }
+
+        private void AddItemScreen(FoodItem item)
+        {
+            AddingToOrder = true;
+            ChangeVisibilities();
+        }
+
+        private void ChangeVisibilities()
+        {
+            if (AddingToOrder)
+            {
+                Categories.Visibility = Visibility.Hidden;
+                FoodList.Visibility = Visibility.Hidden;
+                ItemConfig.Visibility = Visibility.Visible;
+                BackButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Categories.Visibility = Visibility.Visible;
+                FoodList.Visibility = Visibility.Visible;
+                ItemConfig.Visibility = Visibility.Collapsed;
+                BackButton.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void AddToOrder(FoodItem item)
+        {
+            Orders.AddToOrder(item);
+            AddingToOrder = false;
+            ChangeVisibilities();
+        }
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            AddingToOrder = false;
+            ChangeVisibilities();
         }
     }
 }

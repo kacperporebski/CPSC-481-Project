@@ -1,0 +1,22 @@
+﻿<Window x:Class="CPSC_481_Project.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Project"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+    <ToolBar>
+            <Button Content="Button1"></Button>
+            <Button Content="Button2"></Button>
+            <Menu>
+                <MenuItem Header="Menu">
+                    <MenuItem Header="MenuItem1"/>
+                </MenuItem>
+            </Menu>
+    </ToolBar>
+</StackPanel>
+    </Grid>
+</Window>
