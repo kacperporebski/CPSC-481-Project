@@ -47,7 +47,7 @@ namespace CPSC_481_Project
 
         private void AddToOrder(FoodItemView item)
         {
-            MainWindowData.OrderSummary.AddItemToOrder(item);
+            MainWindowData.AddItemToOrder(item);
             OnPropertyChanged(nameof(OrderSummary));
         }
 
@@ -97,6 +97,19 @@ namespace CPSC_481_Project
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    public class Person
+    {
+        public string Name { get; }
+        public OrderSummary Order { get; }
+
+        public Person(string name)
+        {
+            Name = name;
+            Order = new OrderSummary();
+        }
+
     }
 
     public class OrderSummary:INotifyPropertyChanged

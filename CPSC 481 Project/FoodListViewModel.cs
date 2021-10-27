@@ -17,7 +17,7 @@ namespace CPSC_481_Project
         {
             _foodItems = new ObservableCollection<FoodItemView>();
             _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
+            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}));
             _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
             _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
             _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));

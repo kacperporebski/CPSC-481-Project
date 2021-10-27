@@ -73,6 +73,7 @@
     <Compile Include="ItemConfiguration.xaml.cs">
       <DependentUpon>ItemConfiguration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyScrollViewer.cs" />
     <Compile Include="OrderInfo.xaml.cs">
       <DependentUpon>OrderInfo.xaml</DependentUpon>
     </Compile>
@@ -148,6 +149,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Steak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="R %281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

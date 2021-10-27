@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,7 +14,7 @@ namespace CPSC_481_Project
 {
     class MainWindowViewModel: INotifyPropertyChanged
     {
-        public OrderSummary OrderSummary { get; }
+        public OrderViewModel OrderModel { get; }
         public FoodListViewModel FoodList { get; }
 
         public int NumFiltersSelected
@@ -78,8 +79,8 @@ namespace CPSC_481_Project
         public MainWindowViewModel()
         {
             FoodList = new FoodListViewModel();
-            OrderSummary = new OrderSummary();
             _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
+            OrderModel = new OrderViewModel();
         }
 
         private async void CallingServer(object obj)
@@ -111,6 +112,48 @@ namespace CPSC_481_Project
             });
         }
         
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void AddItemToOrder(FoodItemView item)
+        {
+            OrderModel.AddToOrder(item);
+        }
+    }
+
+    public class OrderViewModel:INotifyPropertyChanged
+    {
+        private List<Person> _peoplesOrders;
+        public ObservableCollection<Person> PeoplesOrders
+        {
+            get
+            {
+                var collection = new ObservableCollection<Person>();
+                foreach (var person in _peoplesOrders)
+                {
+                    collection.Add(person);
+                }
+
+                return collection;
+            }
+        }
+
+        public OrderViewModel()
+        {
+            _peoplesOrders = new List<Person>();
+            _peoplesOrders.Add(new Person("Test"));
+        }
+        public void AddToOrder(FoodItemView item)
+        {
+            _peoplesOrders.First(x => x.Name.Equals("Test")).Order.AddItemToOrder(item);
+            OnPropertyChanged(nameof(PeoplesOrders));
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

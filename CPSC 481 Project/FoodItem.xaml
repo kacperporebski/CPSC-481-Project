@@ -13,7 +13,7 @@
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-        <Image x:Name="Image" Grid.Row="0" Margin="0,10,0,0">
+        <Image x:Name="Image" Grid.Row="0" Margin="0,10,0,0" >
             <Image.Source>
                 <Binding Path="ImagePath" />
             </Image.Source>
