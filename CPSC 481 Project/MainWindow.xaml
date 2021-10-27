@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1366">
+        Title="MainWindow" Height="1024" Width="1366" d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
     <!--MAIN WINDOW-->
     <Grid>
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <!--MENU-->
-        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DataContext="{Binding FoodList }"/>
 
         <!--ITEM CONFIGURATION-->
         <local:ItemConfiguration x:Name="ItemConfig" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
@@ -44,7 +44,12 @@
 
         <!--FILTER-->
         <DockPanel x:Name="Filters" Grid.Row="1" Grid.Column="2" Height="150" VerticalAlignment="Top" >
-            <Button Content="Filters" HorizontalContentAlignment="Center" Click="ButtonBase_OnClick">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            <Button Grid.Row="1" Content="Filters" HorizontalContentAlignment="Center" Click="ButtonBase_OnClick">
                 <Button.LayoutTransform>
                     <TransformGroup>
                         <RotateTransform Angle="90" />
@@ -52,13 +57,15 @@
                     </TransformGroup>
                 </Button.LayoutTransform>
             </Button>
+                <Label Grid.Row="0" VerticalAlignment="Center"  Content="{Binding NumFiltersSelected, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Margin="6,-4,-12,0" Height="24" />
+            </Grid>
         </DockPanel>
 
         <ListBox x:Name="FilterOptions" Grid.Column="1" HorizontalAlignment="Left" Height="150" Margin="637,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="191">
-            <CheckBox Content="Gluten Free" Height="27" Width="149"/>
-            <CheckBox Content="Lactose Free" Height="27" Width="149"/>
-            <CheckBox Content="Peanut Free" Height="27" Width="149"/>
-            <CheckBox Content="Not Spicy" Height="27" Width="149"/>
+            <CheckBox Content="Gluten Free" Height="27" Width="149" IsChecked="{Binding GlutenChecked}"/>
+            <CheckBox Content="Lactose Free" Height="27" Width="149" IsChecked="{Binding LactoseChecked}"/>
+            <CheckBox Content="Peanut Free" Height="27" Width="149" IsChecked="{Binding PeanutChecked}"/>
+            <CheckBox Content="Not Spicy" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
         </ListBox>
 
 

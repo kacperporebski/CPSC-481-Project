@@ -60,6 +60,8 @@
     <Compile Include="CategoriesDropDown.xaml.cs">
       <DependentUpon>CategoriesDropDown.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoodListViewModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="FoodItem.xaml.cs">
       <DependentUpon>FoodItem.xaml</DependentUpon>
     </Compile>

@@ -22,18 +22,22 @@ namespace CPSC_481_Project
     {
         private bool AddingToOrder = false;
         private bool FiltersOpen = false;
+        private MainWindowViewModel MainWindowData;
 
         public MainWindow()
         {
             InitializeComponent();
             ChangeVisibilities();
 
-            foreach (var item in FoodList.FoodItems)
+           
+
+            MainWindowData = new MainWindowViewModel();
+            foreach (var item in MainWindowData.FoodList.FoodItems)
             {
                 item.Ordered += AddItemScreen;
             }
+            DataContext = MainWindowData;
 
-            
         }
 
         private void AddItemScreen(FoodItemView item)

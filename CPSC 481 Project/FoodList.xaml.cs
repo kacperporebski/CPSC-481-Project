@@ -25,34 +25,11 @@ namespace CPSC_481_Project
     {
       public FoodList()
         {
-            _foodItems = new ObservableCollection<FoodItemView>();
             InitializeComponent();
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            _foodItems.Add(new FoodItemView("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27"));
-            Items.ItemsSource = FoodItems;
-            OnPropertyChanged();
         }
 
-        private readonly ObservableCollection<FoodItemView> _foodItems;
-
-      public ObservableCollection<FoodItemView> FoodItems => _foodItems;
-
-      public event PropertyChangedEventHandler PropertyChanged;
+      
+        public event PropertyChangedEventHandler PropertyChanged;
 
       protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
       {
