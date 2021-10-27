@@ -13,5 +13,31 @@
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="{Binding ImagePath}" />
 
+        <ListView Grid.Row="1" ItemsSource="{Binding Substitutes}">
+            <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Width="100" Height="100" Content="-" Command="{Binding Decrease}"/>
+                    <TextBlock Grid.Column="1">
+                        <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0} &#x0d;&#x0a;Current Selection:&#x0d;&#x0a;{1}">
+                                <Binding Path="Description" />
+                                <Binding Path="Quantity" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                        <Button Grid.Column="2" Width="100" Height="100" Content="+" Command="{Binding Increase}"/>
+                    </Grid>
+                </StackPanel>
+            </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListView>
+
     </Grid>
 </UserControl>
