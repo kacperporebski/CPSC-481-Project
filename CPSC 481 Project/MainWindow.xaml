@@ -38,8 +38,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="Call Server" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
-            <Button Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
+            <Button x:Name="CallServerButton"  Content="{Binding CallServerText}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" Command="{Binding CallServerCommand}"/>
+            <Button x:Name="PayButton" Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
         </Grid>
 
         <!--FILTER-->
@@ -49,7 +49,7 @@
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-            <Button Grid.Row="1" Content="Filters" HorizontalContentAlignment="Center" Click="ButtonBase_OnClick">
+            <Button Grid.Row="1" Content="Filters" HorizontalContentAlignment="Center" Click="FilterButton_OnClick">
                 <Button.LayoutTransform>
                     <TransformGroup>
                         <RotateTransform Angle="90" />
