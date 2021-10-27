@@ -20,6 +20,6 @@
         </Image>
         <TextBlock x:Name="Item"  Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center"/>
         <TextBlock x:Name="Price"  Grid.Row="2" Text="{Binding Price}" HorizontalAlignment="Center"/>
-        <Button Grid.Row="3" Content="Add" HorizontalAlignment="Center" Margin="0,0,0,10" Command="{Binding Button}"/>
+        <Button Grid.Row="3" Content="Add" HorizontalAlignment="Center" Margin="0,0,0,10" Command="{Binding ConfigureCommand}"/>
     </Grid>
 </UserControl>

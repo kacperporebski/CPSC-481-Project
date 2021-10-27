@@ -11,7 +11,7 @@ namespace CPSC_481_Project
 {
     class MainWindowViewModel: INotifyPropertyChanged
     {
-
+        public OrderSummary OrderSummary { get; }
         public FoodListViewModel FoodList { get; }
 
 
@@ -70,6 +70,7 @@ namespace CPSC_481_Project
         public MainWindowViewModel()
         {
             FoodList = new FoodListViewModel();
+            OrderSummary = new OrderSummary();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

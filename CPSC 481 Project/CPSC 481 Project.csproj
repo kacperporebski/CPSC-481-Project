@@ -61,6 +61,7 @@
       <DependentUpon>CategoriesDropDown.xaml</DependentUpon>
     </Compile>
     <Compile Include="FoodListViewModel.cs" />
+    <Compile Include="IngredientQuantity.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="FoodItem.xaml.cs">
       <DependentUpon>FoodItem.xaml</DependentUpon>
@@ -75,8 +76,10 @@
     <Compile Include="OrderInfo.xaml.cs">
       <DependentUpon>OrderInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderInformation.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>

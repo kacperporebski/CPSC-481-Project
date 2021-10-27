@@ -12,8 +12,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="{Binding ImagePath}" />
-
-        <ListView Grid.Row="1" ItemsSource="{Binding Substitutes}">
+<ListView Grid.Row="1">
+    <TextBlock Text="Ingredients" FontSize="35"/>
+    <ListView ItemsSource="{Binding Ingredients}">
             <ItemsControl.ItemTemplate>
             <DataTemplate>
                 <StackPanel>
@@ -37,6 +38,26 @@
                 </StackPanel>
             </DataTemplate>
             </ItemsControl.ItemTemplate>
+        </ListView>
+
+    <TextBlock Text="Substitutes" FontSize="35"/>
+    <ListView ItemsSource="{Binding Substitutes}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Name}"/>
+                        <CheckBox Grid.Column="1" Width="100" Height="100" Content="-" IsChecked="{Binding Checked}"/>
+                    </Grid>
+                </StackPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ListView>
+        <Button Content="Add To Order" Command="{Binding AddCommand }"/>
         </ListView>
 
     </Grid>

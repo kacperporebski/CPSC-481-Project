@@ -22,42 +22,11 @@ namespace CPSC_481_Project
     /// <summary>
     /// Interaction logic for OrderInfo.xaml
     /// </summary>
-    public partial class OrderInfo : UserControl, INotifyPropertyChanged
+    public partial class OrderInfo : UserControl
     {
-        public ObservableCollection<OrderInformation> CurrentOrder => _currentOrder;
-        private ObservableCollection<OrderInformation> _currentOrder;
-
         public OrderInfo()
         {
-            _currentOrder = new ObservableCollection<OrderInformation>();
             InitializeComponent();
-            OrderInformation.ItemsSource = CurrentOrder;
-        }
-
-        public void AddToOrder(FoodItemView item)
-        {
-            _currentOrder.Add(new OrderInformation(item.Name, double.Parse(item.Price.Split('$')[1])));
-            OnPropertyChanged();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    public class OrderInformation
-    {
-        public string Item { get; }
-        public double Price { get; }
-
-        public OrderInformation(string s, double p)
-        {
-            Item = s;
-            Price = p;
         }
     }
 }

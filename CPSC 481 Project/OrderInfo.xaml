@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Project"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:OrderSummary }">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -13,19 +13,22 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="OrderInformation" Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate DataType="local:OrderInformation">
-                    <TextBlock>
-                        <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0}                           Price:${1}">
-                                <Binding Path="Item" />
-                                <Binding Path="Price" />
-                            </MultiBinding>
-                        </TextBlock.Text>
-                    </TextBlock>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView x:Name="OrderInformation"  Grid.Row="1" ItemsSource="{Binding OrderInformation}">
+            <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0}                           Price:${1}">
+                                        <Binding Path="Item" />
+                                        <Binding Path="Price" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+          
         </ListView>
 
         <Button Grid.Row="2" Content="Confirm"/>
@@ -34,6 +37,8 @@
             <TextBlock Text="Order" FontSize="40" Height="50" Margin="0,-15,0,0"/>
         </Label>
         </Border>
+
+       
 
     </Grid>
 </UserControl>
