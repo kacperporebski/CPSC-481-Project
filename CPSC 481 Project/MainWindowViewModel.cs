@@ -129,7 +129,14 @@ namespace CPSC_481_Project
     public class OrderViewModel:INotifyPropertyChanged
     {
         private List<Person> _peoplesOrders;
-        public ObservableCollection<Person> PeoplesOrders
+
+        [CanBeNull]
+        public Person SelectedPerson { 
+            get; 
+            set;
+        }
+        
+        public ObservableCollection<Person> People
         {
             get
             {
@@ -146,12 +153,19 @@ namespace CPSC_481_Project
         public OrderViewModel()
         {
             _peoplesOrders = new List<Person>();
-            _peoplesOrders.Add(new Person("Test"));
+            _peoplesOrders.Add(new Person("Person 1"));
+            _peoplesOrders.Add(new Person("Person 2"));
+            _peoplesOrders.Add(new Person("Person 3"));
+            _peoplesOrders.Add(new Person("Person 4"));
+            _peoplesOrders.Add(new Person("Person 5"));
         }
+
         public void AddToOrder(FoodItemView item)
         {
-            _peoplesOrders.First(x => x.Name.Equals("Test")).Order.AddItemToOrder(item);
-            OnPropertyChanged(nameof(PeoplesOrders));
+            if(SelectedPerson is null)
+                return;
+            _peoplesOrders.First(x => x.Name.Equals(SelectedPerson.Name)).Order.AddItemToOrder(item);
+            OnPropertyChanged(nameof(People));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
