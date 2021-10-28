@@ -35,10 +35,14 @@ namespace CPSC_481_Project
             ChangeVisibilities();
 
             MainWindowData = new MainWindowViewModel();
-            foreach (var item in MainWindowData.FoodList.FoodItems)
+            foreach (var category in MainWindowData.FoodList.FoodItems)
             {
-                item.Configuring += ItemConfigScreen;
-                item.AddingToOrder += AddToOrder;
+                foreach (var item in category.FoodItems)
+                {
+                    item.Configuring += ItemConfigScreen;
+                    item.AddingToOrder += AddToOrder;
+                }
+               
             }
             DataContext = MainWindowData;
             
