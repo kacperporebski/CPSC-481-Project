@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1024" Width="1366" d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
     <!--MAIN WINDOW-->
-    <Grid>
+    <Grid Background="LightBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height ="*"/>
@@ -26,11 +26,20 @@
         <local:ItemConfiguration x:Name="ItemConfig" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
 
         <!--CATEGORIES/BACK-->
-        <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center">
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,1" BorderBrush="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center">
             <TextBlock Text="Diverse" FontSize="35" TextAlignment="Right" Height="40"/>
         </Label>
+                <Button x:Name="BackButton" Grid.Row="0" Grid.Column="0" Content="Back" Click="BackButton_OnClick"/>
+            </Grid>
+        </Border>
+
         <local:CategoriesDropDown x:Name="Categories" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
-        <Button x:Name="BackButton" Grid.Row="0" Grid.Column="0" Content="Back" Click="BackButton_OnClick"/>
 
         <!--PAY/CALL SERVER BUTTONS HERE-->
         <Grid Grid.Row="0" Grid.Column="3">
