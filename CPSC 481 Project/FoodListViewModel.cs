@@ -31,25 +31,25 @@ namespace CPSC_481_Project
             _food = new ();
             _food.Add(CategoryType.Entrees, new List<FoodItemView>
             {
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
+                new ("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\Steak.jpg", "steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
 
             });
             _food.Add(CategoryType.Drinks, new List<FoodItemView>
             {
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("C:\\Users\\kpWork\\source\\repos\\CPSC 481 Project\\CPSC 481 Project\\R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
             });
             OnPropertyChanged();
         }

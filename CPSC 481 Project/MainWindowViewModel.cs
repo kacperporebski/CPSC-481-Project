@@ -86,7 +86,7 @@ namespace CPSC_481_Project
         private async void CallingServer(object obj)
         {
             _isCallingServer = true;
-            _callServerText = "Server Coming";
+            _callServerText = "Staff OTW";
             OnPropertyChanged(nameof(CallServerText));
             await TimerStart();
             _isCallingServer = false;

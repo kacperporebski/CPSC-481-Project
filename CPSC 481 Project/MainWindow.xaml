@@ -20,10 +20,10 @@
         </Grid.ColumnDefinitions>
 
         <!--MENU-->
-        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DataContext="{Binding FoodList }"/>
+        <local:FoodList x:Name="FoodList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DataContext="{Binding FoodList }" Width="1000"/>
 
         <!--ITEM CONFIGURATION-->
-        <local:ItemConfiguration x:Name="ItemConfig" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <local:ItemConfiguration x:Name="ItemConfig" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
 
         <!--CATEGORIES/BACK-->
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,1" BorderBrush="Black">
@@ -35,7 +35,7 @@
                 <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center">
             <TextBlock Text="Diverse" FontSize="35" TextAlignment="Right" Height="40"/>
         </Label>
-                <Button x:Name="BackButton" Grid.Row="0" Grid.Column="0" Content="Back" Click="BackButton_OnClick"/>
+                <Button x:Name="BackButton" Grid.Row="0" Grid.Column="0" Content="Back" Click="BackButton_OnClick" FontSize="30"/>
             </Grid>
         </Border>
 
@@ -47,18 +47,18 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="CallServerButton"  Content="{Binding CallServerText}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" Command="{Binding CallServerCommand}"/>
-            <Button x:Name="PayButton" Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"/>
+            <Button x:Name="CallServerButton"  Content="{Binding CallServerText}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" Command="{Binding CallServerCommand}" FontSize="30"/>
+            <Button x:Name="PayButton" Content="Pay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" FontSize="30"/>
         </Grid>
 
         <!--FILTER-->
-        <DockPanel x:Name="Filters" Grid.Row="1" Grid.Column="2" Height="150" VerticalAlignment="Top" >
+        <DockPanel x:Name="Filters" Grid.Row="1" Grid.Column="2" Height="150" VerticalAlignment="Top"  >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="1" Content="Filters" HorizontalContentAlignment="Center" Click="FilterButton_OnClick">
+                <Button Grid.Row="1" Content="Filters" HorizontalContentAlignment="Center" Click="FilterButton_OnClick" FontSize="20">
                     <Button.LayoutTransform>
                         <TransformGroup>
                             <RotateTransform Angle="90" />
@@ -70,13 +70,14 @@
             </Grid>
         </DockPanel>
 
-        <ListBox x:Name="FilterOptions" Grid.Column="1" HorizontalAlignment="Left" Height="150" Margin="637,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="191">
+        <ListBox x:Name="FilterOptions" Grid.Column="1" HorizontalAlignment="Left" Height="150" Margin="637,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="191" Background="AliceBlue"  ScrollViewer.VerticalScrollBarVisibility="Disabled" >
             <CheckBox Content="Gluten Free" Height="27" Width="149" IsChecked="{Binding GlutenChecked}"/>
             <CheckBox Content="Lactose Free" Height="27" Width="149" IsChecked="{Binding LactoseChecked}"/>
             <CheckBox Content="Peanut Free" Height="27" Width="149" IsChecked="{Binding PeanutChecked}"/>
             <CheckBox Content="Not Spicy" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
+            <CheckBox Content="Not Spicy" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
+            <CheckBox Content="Not Spicy" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
         </ListBox>
-
 
         <!--ORDER INFORMATION-->
         <local:OrderInfo x:Name="Orders"  Grid.Row="1" Grid.Column="3" DataContext="{Binding OrderModel}"></local:OrderInfo>

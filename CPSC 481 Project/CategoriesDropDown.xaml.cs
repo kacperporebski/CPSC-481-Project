@@ -28,6 +28,7 @@ namespace CPSC_481_Project
         private void MainButton_OnClick(object sender, RoutedEventArgs e)
         {
             Box.Visibility = Box.Visibility is Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Box2.Visibility = Box2.Visibility is Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
         }
 
         private void MenuItem_OnClick(object sender, RoutedEventArgs e)

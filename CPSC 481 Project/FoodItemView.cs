@@ -12,9 +12,11 @@ namespace CPSC_481_Project
         private string _path;
         private string _name;
         private string _price;
+        private string _description;
         public string ImagePath => _path;
         public string Name => _name;
         public string Price => _price;
+        public string Description => _description;
 
         public ICommand ConfigureCommand => _configureCommand;
         private RelayCommand _configureCommand;
@@ -25,8 +27,9 @@ namespace CPSC_481_Project
         public int Quantity => _quantity;
 
 
-        public FoodItemView(string path, string name, string price, List<string> ingredients = null, List<string> subs = null)
+        public FoodItemView(string path, string name, string price, string description, List<string> ingredients = null, List<string> subs = null)
         {
+            _description = description;
             Ingredients = new ObservableCollection<Ingredient>();
             if (ingredients is not null)
                 foreach (var s in ingredients)
