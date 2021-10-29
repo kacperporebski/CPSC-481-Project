@@ -70,6 +70,7 @@ namespace CPSC_481_Project
                 FoodList.Visibility = Visibility.Hidden;
                 ItemConfig.Visibility = Visibility.Visible;
                 BackButton.Visibility = Visibility.Visible;
+                Filters.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -77,6 +78,7 @@ namespace CPSC_481_Project
                 FoodList.Visibility = Visibility.Visible;
                 ItemConfig.Visibility = Visibility.Collapsed;
                 BackButton.Visibility = Visibility.Collapsed;
+                Filters.Visibility = Visibility.Visible;
             }
 
             FilterOptions.Visibility = FiltersOpen ? Visibility.Visible : Visibility.Collapsed;
