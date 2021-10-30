@@ -66,7 +66,7 @@
         </local:MyScrollViewer>
 
         <!--CONFIRM-->
-        <Button Grid.Row="3" Content="Confirm"/>
+        <Button Grid.Row="3" Content="Confirm" FontSize="35"/>
 
         <!--ORDER TITLE-->
         <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black" Background="LightBlue">
