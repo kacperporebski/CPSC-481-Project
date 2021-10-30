@@ -13,7 +13,7 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Height="300" Width="450" Command="{Binding ConfigureCommand}" Margin="0,0,0,0">
+        <Button Grid.Row="0" Height="300" Width="450" Command="{Binding ConfigureCommand}">
             <Button.Template>
                 <ControlTemplate>
                     <Image Height="355" Width="450">
