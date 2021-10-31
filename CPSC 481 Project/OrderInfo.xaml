@@ -7,73 +7,82 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:OrderViewModel }">
     <Border BorderThickness="1" BorderBrush="Black" Background="AliceBlue">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
 
-        <!--PEOPLE CONFIGURATION-->
-        <local:PeopleConfig Grid.Row="1"/>
+            <!--PEOPLE CONFIGURATION-->
+            <local:PeopleConfig Grid.Row="1"/>
 
-        <!-- ACTUAL ORDER INFORMATION THATS DISPLAYED-->
-        <local:MyScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
-            <ItemsControl x:Name="Items" ItemsSource="{Binding People}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="1" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Name}" FontSize="18" Margin="15,0,0,0"/>
-                            <local:MyScrollViewer x:Name="OrderInformation" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
-                                <ItemsControl x:Name="Items" ItemsSource="{Binding Order.OrderInformation}">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <UniformGrid Columns="1" />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="80"/>
-                                                </Grid.ColumnDefinitions>
-                                                <TextBlock Grid.Column="0" Text="{Binding Item}" FontSize="15" Margin="10,0, 0, 0"/>
-                                                <TextBlock Grid.Column="1" FontSize="15">
-                                                    <TextBlock.Text>
+            <!-- ACTUAL ORDER INFORMATION THATS DISPLAYED-->
+            <local:MyScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <ItemsControl x:Name="Items" ItemsSource="{Binding People}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="1" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" FontSize="18" Margin="15,0,0,0"/>
+                                <local:MyScrollViewer x:Name="OrderInformation" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                                    <ItemsControl x:Name="Items" ItemsSource="{Binding Order.OrderInformation}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <UniformGrid Columns="1" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="80"/>
+                                                            <ColumnDefinition Width="20"/>
+                                                            <ColumnDefinition Width="20"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="{Binding Item}" FontSize="15" Margin="10,0, 0, 0"/>
+                                                        <TextBlock Grid.Column="1" FontSize="15">
+                                                            <TextBlock.Text>
                                                                 <MultiBinding StringFormat="{}Price: ${0}">
                                                                     <Binding Path="Price"></Binding>
                                                                 </MultiBinding>
-                                                    </TextBlock.Text>
-                                                    </TextBlock>
-                                                </Grid>
-        </StackPanel>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
+                                                            </TextBlock.Text>
+                                                        </TextBlock>
+                                                        <Button Grid.Column="2" Content="X" >
+                                                            <Button.Resources>
+                                                                <Style TargetType="Border">
+                                                                    <Setter Property="CornerRadius" Value="5"/>
+                                                                </Style>
+                                                            </Button.Resources>
+                                                        </Button>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-                            </local:MyScrollViewer>
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </local:MyScrollViewer>
+                                </local:MyScrollViewer>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </local:MyScrollViewer>
 
-        <!--CONFIRM-->
-        <Button Grid.Row="3" Content="Confirm" FontSize="35"/>
+            <!--CONFIRM-->
+            <Button Grid.Row="3" Content="Confirm" FontSize="35"/>
 
-        <!--ORDER TITLE-->
-        <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black" Background="LightBlue">
-            <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
-                <TextBlock Text="Order" FontSize="40" Height="50" Margin="0,-15,0,0"/>
-            </Label>
-        </Border>
-    </Grid>
+            <!--ORDER TITLE-->
+            <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black" Background="LightBlue">
+                <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
+                    <TextBlock Text="Order" FontSize="40" Height="50" Margin="0,-15,0,0"/>
+                </Label>
+            </Border>
+        </Grid>
     </Border>
 </UserControl>
