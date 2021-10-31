@@ -163,10 +163,18 @@ namespace CPSC_481_Project
             foreach (var x in _peoplesOrders)
             {
                 x.SetOwner(owner);
+                x.Editting += (value) => UpdateEdittingCanExecute(value);
             }
         }
 
-    
+        private void UpdateEdittingCanExecute(bool value)
+        {
+            foreach (var x in _peoplesOrders)
+            {
+                x.CanEdit = value;
+            }
+        }
+
 
         public void AddToOrder(FoodItemView item)
         {

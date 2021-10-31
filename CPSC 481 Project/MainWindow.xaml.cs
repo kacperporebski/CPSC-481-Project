@@ -115,7 +115,7 @@ namespace CPSC_481_Project
         public string Name { get; }
         public OrderSummary Order { get; }
 
-        private bool _editing;
+        public bool CanEdit;
         private RelayCommand _editPersonName;
         private Window _owner;
         public ICommand EditPersonName => _editPersonName;
@@ -123,7 +123,7 @@ namespace CPSC_481_Project
         {
             Name = name;
             Order = new OrderSummary();
-            _editPersonName = new RelayCommand(EditName, (_) => !_editing);
+            _editPersonName = new RelayCommand(EditName, (_) => !CanEdit);
         }
 
         public void SetOwner(Window owner)
@@ -132,9 +132,10 @@ namespace CPSC_481_Project
         }
         private void EditName(object obj)
         {
-            _editing = true;
+            CanEdit = true;
             var dialog = new MyDialog("Change Name", "Enter the name for this person");
             dialog.Owner = _owner;
+            Editting?.Invoke(true);
             dialog.Show();
             dialog.Closing += (sender, e) =>
             {
@@ -144,11 +145,15 @@ namespace CPSC_481_Project
                     //do stuff with input
                 }
 
-                _editing = false;
+                CanEdit = false;
+                Editting?.Invoke(false);
             };
         }
 
+        public event Editting Editting;
     }
+
+    public delegate void Editting(bool update);
 
     public class OrderSummary:INotifyPropertyChanged
     {
