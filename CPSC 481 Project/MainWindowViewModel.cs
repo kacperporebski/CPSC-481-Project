@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 using CPSC_481_Project.Annotations;
 
@@ -75,23 +74,23 @@ namespace CPSC_481_Project
         public ICommand CallServerCommand => _callServerCommand;
         private RelayCommand _callServerCommand;
         private bool _isCallingServer;
-        private string _callServerText = "Call Server";
+        private string _callServerText = "C A L L  S E R V E R";
 
-        public MainWindowViewModel(Window owner)
+        public MainWindowViewModel()
         {
             FoodList = new FoodListViewModel();
             _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
-            OrderModel = new OrderViewModel(owner);
+            OrderModel = new OrderViewModel();
         }
 
         private async void CallingServer(object obj)
         {
             _isCallingServer = true;
-            _callServerText = "Staff OTW";
+            _callServerText = "S T A F F  O T W";
             OnPropertyChanged(nameof(CallServerText));
             await TimerStart();
             _isCallingServer = false;
-            _callServerText = "Call Server";
+            _callServerText = "C A L L  S E R V E R";
             OnPropertyChanged(nameof(CallServerText));
             CommandManager.InvalidateRequerySuggested();
         }
@@ -130,7 +129,7 @@ namespace CPSC_481_Project
     public class OrderViewModel:INotifyPropertyChanged
     {
         private List<Person> _peoplesOrders;
-        
+
         [CanBeNull]
         public Person SelectedPerson { 
             get; 
@@ -151,7 +150,7 @@ namespace CPSC_481_Project
             }
         }
 
-        public OrderViewModel(Window owner)
+        public OrderViewModel()
         {
             _peoplesOrders = new List<Person>();
             _peoplesOrders.Add(new Person("Person 1"));
@@ -159,22 +158,7 @@ namespace CPSC_481_Project
             _peoplesOrders.Add(new Person("Person 3"));
             _peoplesOrders.Add(new Person("Person 4"));
             _peoplesOrders.Add(new Person("Person 5"));
-
-            foreach (var x in _peoplesOrders)
-            {
-                x.SetOwner(owner);
-                x.Editting += (value) => UpdateEdittingCanExecute(value);
-            }
         }
-
-        private void UpdateEdittingCanExecute(bool value)
-        {
-            foreach (var x in _peoplesOrders)
-            {
-                x.CanEdit = value;
-            }
-        }
-
 
         public void AddToOrder(FoodItemView item)
         {

@@ -12,7 +12,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                        <TextBlock Text="{Binding Name}" FontSize="60" HorizontalAlignment="Center" TextDecorations="Underline"/>
+                        <TextBlock Text="{Binding Name}" FontSize="35" FontFamily="Palatino Linotype" HorizontalAlignment="Center" TextDecorations="Underline"/>
                         <ScrollViewer x:Name="ScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
                             <ItemsControl x:Name="Items" ItemsSource="{Binding FoodItems}">
                                 <ItemsControl.ItemsPanel>
