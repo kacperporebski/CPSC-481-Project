@@ -78,6 +78,12 @@
       <DependentUpon>OrderInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderInformation.cs" />
+    <Compile Include="OrderList.xaml.cs">
+      <DependentUpon>OrderList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.xaml.cs">
+      <DependentUpon>PaymentMethod.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PeopleConfig.xaml.cs">
       <DependentUpon>PeopleConfig.xaml</DependentUpon>
     </Compile>
@@ -118,6 +124,14 @@
     <Page Include="OrderInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PaymentMethod.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PeopleConfig.xaml">
       <SubType>Designer</SubType>

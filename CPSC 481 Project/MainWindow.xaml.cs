@@ -31,6 +31,11 @@ namespace CPSC_481_Project
         
         public MainWindow()
         {
+            var orderSelect = new OrderList();
+            var payment = new PaymentMethod();
+            orderSelect.Show();
+            payment.Show();
+
             InitializeComponent();
             ChangeVisibilities();
 
