@@ -29,7 +29,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <TextBlock Text="{Binding Name}" FontSize="18" Margin="15,0,0,0"/>
+                                <TextBlock Text="{Binding Name}" FontSize="18" FontFamily="Palatino Linotype" Margin="15,0,0,0"/>
                                 <local:MyScrollViewer x:Name="OrderInformation" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
                                     <ItemsControl x:Name="Items" ItemsSource="{Binding Order.OrderInformation}">
                                         <ItemsControl.ItemsPanel>
@@ -47,7 +47,7 @@
                                                             <ColumnDefinition Width="20"/>
                                                             <ColumnDefinition Width="20"/>
                                                         </Grid.ColumnDefinitions>
-                                                        <TextBlock Grid.Column="0" Text="{Binding Item}" FontSize="15" Margin="10,0, 0, 0"/>
+                                                        <TextBlock Grid.Column="0" Text="{Binding Item}" FontSize="15" FontFamily="Palatino Linotype" Margin="10,0, 0, 0"/>
                                                         <TextBlock Grid.Column="1" FontSize="15">
                                                             <TextBlock.Text>
                                                                 <MultiBinding StringFormat="{}Price: ${0}">
@@ -75,12 +75,12 @@
             </local:MyScrollViewer>
 
             <!--CONFIRM-->
-            <Button Grid.Row="3" Content="Confirm" FontSize="35"/>
+            <Button Grid.Row="3" Content="C O N F I R M" FontSize="25" FontFamily="Palatino Linotype"/>
 
             <!--ORDER TITLE-->
             <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black" Background="LightBlue">
                 <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
-                    <TextBlock Text="Order" FontSize="40" Height="50" Margin="0,-15,0,0"/>
+                    <TextBlock Text="O R D E R" FontSize="30" FontFamily="Palatino Linotype" Height="50" Margin="0,-5,0,0"/>
                 </Label>
             </Border>
         </Grid>

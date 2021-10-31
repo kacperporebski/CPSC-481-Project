@@ -8,19 +8,19 @@
         Title="PaymentMethod" Height="1024" Width="1366">
     <Border BorderThickness="2" BorderBrush="Black" Background="LightBlue">
         <Grid>
-            
+
             <Border BorderThickness="1" BorderBrush="Black" Margin="0,0,0,922">
                 <Grid>
-                    <Label Content="D I V E R SE" FontSize="45" FontFamily="Palatino Linotype" HorizontalAlignment="Center" />
-                    <Button Content="B A C K" FontSize="30" BorderThickness="1.5" BorderBrush="Black" Margin="0,0,1133,0" />
+                    <Label Content="D I V E R SE" FontSize="35" FontFamily="Palatino Linotype" HorizontalAlignment="Center" />
+                    <Button Content="B A C K" FontSize="20" FontFamily="Palatino Linotype" BorderThickness="1" BorderBrush="Black" Margin="0,0,1133,0" />
                 </Grid>
 
             </Border>
-            
-            <Label Content="Select Payment Method" FontSize="45" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="444,131,412,0" Width="498"/>
-            <Button Content="Debit" FontSize="35" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="527,272,535,575"/>
-            <Button Content="Credit" FontSize="35" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="527,478,535,369"/>
-            <Button Content="Cash" FontSize="35" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="527,689,535,158"/>
+
+            <Label Content="S E L E C T  P A Y M E N T  M E T H O D" FontSize="30" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="388,143,388,0" Width="578"/>
+            <Button Content="Debit" FontSize="30" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="527,272,535,575"/>
+            <Button Content="Credit" FontSize="30" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="527,478,535,369"/>
+            <Button Content="Cash" FontSize="30" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="527,689,535,158"/>
         </Grid>
     </Border>
 </Window>

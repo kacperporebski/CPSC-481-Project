@@ -39,7 +39,7 @@ namespace CPSC_481_Project
             InitializeComponent();
             ChangeVisibilities();
 
-            MainWindowData = new MainWindowViewModel(this);
+            MainWindowData = new MainWindowViewModel();
             foreach (var category in MainWindowData.FoodList.FoodItems)
             {
                 foreach (var item in category.FoodItems)
@@ -115,45 +115,13 @@ namespace CPSC_481_Project
         public string Name { get; }
         public OrderSummary Order { get; }
 
-        public bool CanEdit;
-        private RelayCommand _editPersonName;
-        private Window _owner;
-        public ICommand EditPersonName => _editPersonName;
         public Person(string name)
         {
             Name = name;
             Order = new OrderSummary();
-            _editPersonName = new RelayCommand(EditName, (_) => !CanEdit);
         }
 
-        public void SetOwner(Window owner)
-        {
-            _owner = owner;
-        }
-        private void EditName(object obj)
-        {
-            CanEdit = true;
-            var dialog = new MyDialog("Change Name", "Enter the name for this person");
-            dialog.Owner = _owner;
-            Editting?.Invoke(true);
-            dialog.Show();
-            dialog.Closing += (sender, e) =>
-            {
-                var d = sender as MyDialog;
-                if (!d.Canceled)
-                {
-                    //do stuff with input
-                }
-
-                CanEdit = false;
-                Editting?.Invoke(false);
-            };
-        }
-
-        public event Editting Editting;
     }
-
-    public delegate void Editting(bool update);
 
     public class OrderSummary:INotifyPropertyChanged
     {

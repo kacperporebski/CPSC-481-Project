@@ -24,7 +24,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock x:Name="Item"  Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="30" Height="40" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Price"  Grid.Row="2" Text="{Binding Price}" HorizontalAlignment="Center" FontSize="25"/>
+        <TextBlock x:Name="Item"  Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="30" FontFamily="Palatino Linotype" Height="40" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Price"  Grid.Row="2" Text="{Binding Price}" HorizontalAlignment="Center" FontSize="25" FontFamily="Palatino Linotype"/>
     </Grid>
 </UserControl>
