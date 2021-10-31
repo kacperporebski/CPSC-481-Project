@@ -24,7 +24,7 @@
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding Name}" FontSize="20"/>
                             <Button Grid.Column="2" Content="-" HorizontalAlignment="Right" Width="50"/>
-                            <Button Grid.Column="1" Content="Edit" HorizontalAlignment="Right" Width="50" Margin="0,0,-40,0"/>
+                            <Button Grid.Column="1" Content="Edit" HorizontalAlignment="Right" Width="50" Margin="0,0,-40,0" Command="{Binding EditPersonName}"/>
                             </Grid>
                         </StackPanel>
                     </DataTemplate>
