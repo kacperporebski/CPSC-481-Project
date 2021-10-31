@@ -20,7 +20,8 @@
             <StackPanel x:Name="Box2" Background="AliceBlue" Visibility="Collapsed" Width="300">
             <MenuItem Header="All" FontSize="20" Height="50"/>
             <MenuItem Header="Appetizers" FontSize="20" Height="50"/>
-            <MenuItem Header="Entrees" FontSize="20" Height="50"/>
+            <MenuItem Header="Entrées" FontSize="20" Height="50"/>
+            <MenuItem Header="Mains" FontSize="20" Height="50"/>
             <MenuItem Header="Drinks" Click="MenuItem_OnClick" FontSize="20" Height="50"/>
             <MenuItem Header="Deserts" FontSize="20" Height="50"/>
         </StackPanel>
