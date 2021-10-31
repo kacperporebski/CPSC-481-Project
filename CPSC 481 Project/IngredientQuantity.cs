@@ -5,7 +5,15 @@
         None,
         Light,
         Normal,
-        Medium,
         Extra
+    }
+
+    public enum CookingPref
+    {
+        Rare,
+        MediumRare,
+        Medium,
+        MediumWell,
+        WellDone
     }
 }
