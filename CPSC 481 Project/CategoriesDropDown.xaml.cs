@@ -33,8 +33,7 @@ namespace CPSC_481_Project
 
         private void MenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            var window = new Window1();
-            window.ShowDialog();
+           
         }
         
     }
