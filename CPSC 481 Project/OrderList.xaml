@@ -1,0 +1,54 @@
+﻿<Window x:Class="CPSC_481_Project.OrderList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Project"
+        mc:Ignorable="d"
+        Title="OrderList" Height="1024" Width="1366">
+
+    <Border BorderThickness="1" BorderBrush="Black" Background="LightBlue">
+        <Grid Margin="0,31,0,73">
+            <Border BorderThickness="1" BorderBrush="Black" Margin="0,-28,0,849">
+                <Grid>
+                    <Label Content="D I V E R SE" FontSize="45" FontFamily="Palatino Linotype" HorizontalAlignment="Center" />
+                    <Button Content="B A C K" FontSize="30" BorderThickness="1.5" BorderBrush="Black" Margin="0,0,1133,0" />
+                </Grid>
+
+            </Border>
+            <Label Content="S E L E C T  O R D E R  T O  P A Y" FontSize="35" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="402,76,378,0" Width="576"/>
+            <StackPanel Margin="48,138,59,10">
+                <Border BorderThickness="2" BorderBrush="Black">
+                    <Button Background="WhiteSmoke">
+                        <TextBlock FontSize ="30" FontFamily="Palatino Linotype" xml:space="preserve" Width="1231" Height="339" >
+                        <TextBlock Text = "Person 1" TextDecorations="Underline"/> 
+                                         
+                        Steak                                                                                    $27
+                        Steak                                                                                    $27
+                    
+                        Total                                                                                     $54
+                    </TextBlock>
+                    </Button>
+
+                </Border>
+
+                <Border BorderThickness="2" BorderBrush="Black">
+                    <Button Background="WhiteSmoke" Height="346">
+                        <TextBlock FontSize ="30" FontFamily="Palatino Linotype" xml:space="preserve" Width="1236" Height="374" >
+                        <TextBlock Text = "Person 2" TextDecorations="Underline"/> <LineBreak/>
+                        Steak                                                                                     $27
+                        Ramen                                                                                  $17
+                    
+                        Total                                                                                      $44
+                    </TextBlock>
+                    </Button>
+
+                </Border>
+
+
+            </StackPanel>
+
+            <Button Content="P A Y " FontSize="30" FontFamily="Palatino Linotype" BorderThickness="1.5" BorderBrush="Black" Margin="538,880,524,-47"/>
+        </Grid>
+    </Border>
+</Window>
