@@ -72,13 +72,11 @@
             </Grid>
         </DockPanel>
 
-        <ListBox x:Name="FilterOptions" Grid.Column="1" HorizontalAlignment="Left" Height="150" Margin="637,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="191" Background="AliceBlue"  ScrollViewer.VerticalScrollBarVisibility="Disabled" >
-            <CheckBox Content="Gluten Free" FontFamily="Palatino Linotype" Height="27" Width="149" IsChecked="{Binding GlutenChecked}"/>
-            <CheckBox Content="Lactose Free" FontFamily="Palatino Linotype" Height="27" Width="149" IsChecked="{Binding LactoseChecked}"/>
-            <CheckBox Content="Peanut Free" FontFamily="Palatino Linotype" Height="27" Width="149" IsChecked="{Binding PeanutChecked}"/>
-            <CheckBox Content="Not Spicy" FontFamily="Palatino Linotype" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
-            <CheckBox Content="Not Spicy" FontFamily="Palatino Linotype" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
-            <CheckBox Content="Not Spicy" FontFamily="Palatino Linotype" Height="27" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
+        <ListBox x:Name="FilterOptions" Grid.Column="1" HorizontalAlignment="Left" Height="167" Margin="637,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="191" Background="AliceBlue"  ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+            <CheckBox Content="Gluten Free" FontFamily="Palatino Linotype" Height="34" Width="149" IsChecked="{Binding GlutenChecked}"/>
+            <CheckBox Content="Lactose Free" FontFamily="Palatino Linotype" Height="37" Width="149" IsChecked="{Binding LactoseChecked}"/>
+            <CheckBox Content="Peanut Free" FontFamily="Palatino Linotype" Height="37" Width="149" IsChecked="{Binding PeanutChecked}"/>
+            <CheckBox Content="Not Spicy" FontFamily="Palatino Linotype" Height="34" Width="149" IsChecked="{Binding NotSpicyChecked}"/>
         </ListBox>
 
         <!--ORDER INFORMATION-->
