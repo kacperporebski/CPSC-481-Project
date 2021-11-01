@@ -33,6 +33,8 @@ namespace CPSC_481_Project
         {
             var orderSelect = new OrderList();
             var payment = new PaymentMethod();
+            var thankyou = new ThankYouScreen();
+            thankyou.Show();
             orderSelect.Show();
             payment.Show();
 

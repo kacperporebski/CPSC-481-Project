@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Project"
         mc:Ignorable="d"
-        Title="TipScreen" Height="1024" Width="1366">
+        Title="Thank You" Height="1024" Width="1366">
     <Border BorderThickness="2" BorderBrush="Black" Background="LightBlue">
         <Grid>
 
