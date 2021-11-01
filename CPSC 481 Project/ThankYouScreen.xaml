@@ -1,0 +1,26 @@
+﻿<Window x:Class="CPSC_481_Project.ThankYouScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Project"
+        mc:Ignorable="d"
+        Title="TipScreen" Height="1024" Width="1366">
+    <Border BorderThickness="2" BorderBrush="Black" Background="LightBlue">
+        <Grid>
+
+            <Border BorderThickness="1" BorderBrush="Black" Margin="0,0,0,922">
+                <Grid>
+                    <Label Content="D I V E R S E" FontSize="35" FontFamily="Palatino Linotype" HorizontalAlignment="Center" />
+                </Grid>
+
+            </Border>
+
+            <Label Content="     THANK YOU FOR&#xA; CHOOSING DIVERSE!" FontSize="50" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="410,191,300,0" Width="647" Height="255"/>
+            <Label Content="Your server will arrive shortly&#xD;&#xA;      to accept your payment" FontSize="35" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="452,410,257,0" Width="648" Height="255"/>
+            <Button Content="Main Menu" FontSize="30" FontFamily="Palatino Linotype" BorderThickness="2" BorderBrush="Black" Background ="WhiteSmoke" Margin="545,607,518,291.5"/>
+
+
+        </Grid>
+    </Border>
+</Window>
