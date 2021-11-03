@@ -165,6 +165,7 @@ namespace CPSC_481_Project
             var p = new Person("Person 1");
             p.CanDelete = false;
             _peoplesOrders.Add(p);
+            SelectedPerson = p;
 
             UpdateModel();
             

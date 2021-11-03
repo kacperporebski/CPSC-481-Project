@@ -18,19 +18,19 @@
                         <StackPanel Width="290">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="29"/>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="{Binding Name}" FontSize="18" FontFamily="Palatino Linotype"/>
-                            <Button Grid.Column="2" Content="-" HorizontalAlignment="Right" Width="50" Command="{Binding RemovePerson}">
-                                <Button.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </Button.Resources>
-                            </Button>
-                                <Button Grid.Column="1" Content="E D I T" FontSize ="10" FontFamily="Palatino Linotype" HorizontalAlignment="Right" Width="50" Margin="0,0,-40,0"  Command="{Binding EditPersonName}">
+                                <Button Grid.Column="2" Content="-" HorizontalAlignment="Right" Width="50" Command="{Binding RemovePerson}">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                                <Button Grid.Column="1" Content="R E N A M E" FontSize ="10" FontFamily="Palatino Linotype" HorizontalAlignment="Right" Width="67" Margin="0,0,60,0"  Command="{Binding EditPersonName}" Grid.ColumnSpan="2">
                                     <Button.Resources>
                                         <Style TargetType="Border">
                                             <Setter Property="CornerRadius" Value="5"/>
@@ -41,7 +41,7 @@
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
-               </ListBox>
+            </ListBox>
         </local:MyScrollViewer>
         <Button Grid.Row="1" Content="A D D  P E R S O N" Command="{Binding AddPerson}"/>
     </Grid>
