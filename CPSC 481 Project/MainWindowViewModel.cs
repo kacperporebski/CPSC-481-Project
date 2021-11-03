@@ -129,7 +129,10 @@ namespace CPSC_481_Project
 
     public class OrderViewModel:INotifyPropertyChanged
     {
+        private readonly Window _owner;
         private List<Person> _peoplesOrders;
+        public ICommand AddPerson => _addPerson;
+        private RelayCommand _addPerson;
 
         [CanBeNull]
         public Person SelectedPerson { 
@@ -151,20 +154,57 @@ namespace CPSC_481_Project
             }
         }
 
+        private int _personCount = 1;
+        private int _personNumToAppend = 1;
+
         public OrderViewModel(Window owner)
         {
+            _addPerson = new RelayCommand(AddPersonPressed);
+            _owner = owner;
             _peoplesOrders = new List<Person>();
-            _peoplesOrders.Add(new Person("Person 1"));
-            _peoplesOrders.Add(new Person("Person 2"));
-            _peoplesOrders.Add(new Person("Person 3"));
-            _peoplesOrders.Add(new Person("Person 4"));
-            _peoplesOrders.Add(new Person("Person 5"));
+            var p = new Person("Person 1");
+            p.CanDelete = false;
+            _peoplesOrders.Add(p);
 
+            UpdateModel();
+            
+        }
+
+        private void UpdateModel()
+        {
             foreach (var x in _peoplesOrders)
             {
-                x.SetOwner(owner);
-                x.Editting += (value) => UpdateEdittingCanExecute(value);
+                x.SetOwner(_owner);
+                x.Editting += UpdateEdittingCanExecute;
+                x.Deleting += DeletePerson;
             }
+        }
+
+        private void DeletePerson(Person p)
+        {
+            _peoplesOrders.Remove(p);
+            _personCount--;
+
+            if(_personCount==1)
+                _peoplesOrders.First().CanDelete = false;
+
+            p.Deleting -= DeletePerson;
+            p.Editting -= UpdateEdittingCanExecute;
+            OnPropertyChanged(nameof(People));
+
+        }
+
+        private void AddPersonPressed(object _)
+        {
+            _personCount++;
+            _personNumToAppend++;
+            if (_personCount == 2)
+                _peoplesOrders.First().CanDelete = true;
+            var p = new Person("Person " + _personNumToAppend);
+            _peoplesOrders.Add(p);
+            p.Deleting += DeletePerson;
+            p.Editting += UpdateEdittingCanExecute;
+            OnPropertyChanged(nameof(People));
         }
 
         private void UpdateEdittingCanExecute(bool value)
@@ -173,6 +213,7 @@ namespace CPSC_481_Project
             {
                 x.CanEdit = value;
             }
+            OnPropertyChanged(nameof(People));
         }
 
         public void AddToOrder(FoodItemView item)

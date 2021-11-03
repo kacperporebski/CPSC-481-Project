@@ -25,9 +25,5 @@ namespace CPSC_481_Project
             InitializeComponent();
         }
 
-        private void Selector_OnSelected(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

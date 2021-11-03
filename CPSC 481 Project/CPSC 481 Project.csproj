@@ -90,6 +90,7 @@
     <Compile Include="PeopleConfig.xaml.cs">
       <DependentUpon>PeopleConfig.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Ingredient.cs" />

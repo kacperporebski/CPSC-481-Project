@@ -10,7 +10,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
@@ -146,53 +145,9 @@ namespace CPSC_481_Project
         }
     }
 
-    public class Person:INotifyPropertyChanged
-    {
-        public string Name { get; }
-        public OrderSummary Order { get; }
-        public bool CanEdit;
-        private RelayCommand _editPersonName;
-        private Window _owner;
-        public ICommand EditPersonName => _editPersonName;
+    public delegate void BoolEvent(bool update);
 
-        public Person(string name)
-        {
-            Name = name;
-            Order = new OrderSummary();
-            _editPersonName = new RelayCommand(EditName, (_) => !CanEdit);
-        }
-
-        public void SetOwner(Window owner)
-        {
-            _owner = owner;
-        }
-
-        private void EditName(object obj)
-        {
-            CanEdit = true;
-            var dialog = new MyDialog("Change Name", "Enter the name for this person");
-            dialog.Owner = _owner;
-            Editting?.Invoke(true);
-            dialog.Show();
-            dialog.Closing += (sender, e) =>
-            {
-                //do stuff with input
-                CanEdit = false;
-                Editting?.Invoke(false);
-            };
-        }
-
-        public event Editting Editting;
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    public delegate void Editting(bool update);
+    public delegate void PersonEvent(Person p);
 
     public class OrderSummary:INotifyPropertyChanged
     {
