@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using CPSC_481_Project.Annotations;
 
 namespace CPSC_481_Project
@@ -19,15 +20,46 @@ namespace CPSC_481_Project
                 var collection = new ObservableCollection<Category>();
                 foreach (var category in _food.Keys)
                 {
-                    collection.Add(new Category(category, _food[category]));
+                    if(_whiteList.Contains(category))
+                        collection.Add(new Category(category, _food[category]));
                 }
 
                 return collection;
             }
         }
 
+        public ICommand AllCategories => _allCategories;
+        private RelayCommand _allCategories;
+
+        public ICommand Appetizers => _appetizers;
+        private RelayCommand _appetizers;
+
+        public ICommand Desserts => _desserts;
+        private RelayCommand _desserts;
+
+        public ICommand Drinks => _drinks;
+        private RelayCommand _drinks;
+
+        public ICommand Mains => _mains;
+        private RelayCommand _mains;
+
+        public ICommand Entrees => _entrees;
+        private RelayCommand _entrees;
+
+        private List<CategoryType> _whiteList;
+
         public FoodListViewModel()
         {
+            SetAllCategories(null);
+            _allCategories = new RelayCommand(SetAllCategories);
+            _appetizers = new RelayCommand(SetAppys);
+            _desserts = new RelayCommand(SetDesserts);
+            _drinks = new RelayCommand(SetDrinks);
+            _mains = new RelayCommand(SetMains);
+            _entrees = new RelayCommand(SetEntrees);
+
+
+
             _food = new ();
             _food.Add(CategoryType.Mains, new List<FoodItemView>
             {
@@ -51,6 +83,42 @@ namespace CPSC_481_Project
                 new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" , new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
             });
             OnPropertyChanged();
+        }
+
+        private void SetEntrees(object obj)
+        {
+            _whiteList = new List<CategoryType>() {CategoryType.Entrees};
+            OnPropertyChanged(nameof(FoodItems));
+        }
+
+        private void SetMains(object obj)
+        {
+            _whiteList = new List<CategoryType>() { CategoryType.Mains };
+            OnPropertyChanged(nameof(FoodItems));
+        }
+
+        private void SetDrinks(object obj)
+        {
+            _whiteList = new List<CategoryType>() { CategoryType.Drinks };
+            OnPropertyChanged(nameof(FoodItems));
+        }
+
+        private void SetAppys(object obj)
+        {
+            _whiteList = new List<CategoryType>() { CategoryType.Appetizers };
+            OnPropertyChanged(nameof(FoodItems));
+        }
+
+        private void SetDesserts(object obj)
+        {
+            _whiteList = new List<CategoryType>() { CategoryType.Dessert };
+            OnPropertyChanged(nameof(FoodItems));
+        }
+
+        private void SetAllCategories(object obj)
+        {
+            _whiteList = new List<CategoryType>() { CategoryType.Appetizers, CategoryType.Entrees, CategoryType.Mains, CategoryType.Drinks, CategoryType.Dessert };
+            OnPropertyChanged(nameof(FoodItems));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

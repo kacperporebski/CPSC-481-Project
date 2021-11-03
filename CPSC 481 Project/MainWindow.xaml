@@ -39,7 +39,7 @@
             </Grid>
         </Border>
 
-        <local:CategoriesDropDown x:Name="Categories" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+        <local:CategoriesDropDown x:Name="Categories" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" DataContext="{Binding FoodList}"/>
 
         <!--PAY/CALL SERVER BUTTONS HERE-->
         <Grid Grid.Row="0" Grid.Column="3">

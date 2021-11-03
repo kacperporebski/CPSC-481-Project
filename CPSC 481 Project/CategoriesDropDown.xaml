@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Project"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:FoodListViewModel }">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -18,12 +18,12 @@
         <ToggleButton x:Name="MainButton" Content="C A T E G O R I E S" Click="MainButton_OnClick" FontSize="20" FontFamily="Palatino Linotype" />
         <Border Grid.Row="1"  x:Name="Box" Visibility="Collapsed">
             <StackPanel x:Name="Box2" Background="AliceBlue" Visibility="Collapsed" Width="300">
-            <MenuItem Header="A L L" FontSize="15" FontFamily="Palatino Linotype" Height="50"/>
-            <MenuItem Header="A P P E T I Z E R S" FontSize="15" FontFamily="Palatino Linotype" Height="50"/>
-            <MenuItem Header="E N T R É E S" FontSize="15" FontFamily="Palatino Linotype" Height="50"/>
-            <MenuItem Header="M A I N S" FontSize="15" FontFamily="Palatino Linotype" Height="50"/>
-            <MenuItem Header="D R I N K S" Click="MenuItem_OnClick" FontSize="15" FontFamily="Palatino Linotype" Height="50"/>
-            <MenuItem Header="D E S S E R T S" FontSize="15" FontFamily="Palatino Linotype" Height="50"/>
+            <MenuItem Header="A L L" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding AllCategories}"/>
+            <MenuItem Header="A P P E T I Z E R S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Appetizers}"/>
+            <MenuItem Header="E N T R É E S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Entrees}"/>
+                <MenuItem Header="M A I N S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Mains}"/>
+            <MenuItem Header="D R I N K S" Click="MenuItem_OnClick" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Drinks}"/>
+                <MenuItem Header="D E S S E R T S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Desserts}"/>
         </StackPanel>
         </Border>
     </Grid>
