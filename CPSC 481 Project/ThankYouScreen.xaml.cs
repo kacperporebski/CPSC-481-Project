@@ -23,5 +23,12 @@ namespace CPSC_481_Project
         {
             InitializeComponent();
         }
+
+        public event Event MainMenu;
+
+        private void MainMenu_OnClick(object sender, RoutedEventArgs e)
+        {
+            MainMenu?.Invoke();
+        }
     }
 }

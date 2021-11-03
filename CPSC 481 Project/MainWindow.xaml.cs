@@ -25,22 +25,22 @@ namespace CPSC_481_Project
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        private bool AddingToOrder = false;
-        private bool FiltersOpen = false;
+        private bool AddingToOrder;
+        private bool FiltersOpen;
         private MainWindowViewModel MainWindowData;
+        private OrderList _confirmation { get; set; }
+        private ThankYouScreen _thankYouScreen { get; set; }
 
         public MainWindow()
         {
-            var orderSelect = new OrderList();
-            var payment = new PaymentMethod();
-            var thankyou = new ThankYouScreen();
-            thankyou.Show();
-            orderSelect.Show();
-            payment.Show();
-
             InitializeComponent();
-            ChangeVisibilities();
+            RestartApp();
+        }
 
+        private void RestartApp()
+        {
+            AddingToOrder = false;
+            FiltersOpen = false;
             MainWindowData = new MainWindowViewModel(this);
             foreach (var category in MainWindowData.FoodList.FoodItems)
             {
@@ -49,12 +49,23 @@ namespace CPSC_481_Project
                     item.Configuring += ItemConfigScreen;
                     item.AddingToOrder += AddToOrder;
                 }
-               
+
             }
+
+            SourceInitialized += (s, a) =>
+            {
+                _confirmation = new OrderList();
+                _confirmation.Owner = this;
+
+                _thankYouScreen = new ThankYouScreen();
+                _thankYouScreen.Owner = this;
+            };
+
             DataContext = MainWindowData;
-            
-           
+            ChangeVisibilities();
         }
+
+
 
         private void AddToOrder(FoodItemView item)
         {
@@ -109,6 +120,29 @@ namespace CPSC_481_Project
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void PayButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Visibility = Visibility.Collapsed;
+            _confirmation.BackButton += () =>
+            {
+                _confirmation.Visibility = Visibility.Collapsed;
+                Visibility = Visibility.Visible;
+            };
+            _confirmation.PayButton += () =>
+            {
+                _confirmation.Visibility = Visibility.Collapsed;
+                _thankYouScreen.Show();
+            };
+            
+            _confirmation.Show();
+            _thankYouScreen.MainMenu += () =>
+            {
+                RestartApp();
+                _thankYouScreen.Visibility = Visibility.Collapsed;
+                Visibility = Visibility.Visible;
+            };
         }
     }
 

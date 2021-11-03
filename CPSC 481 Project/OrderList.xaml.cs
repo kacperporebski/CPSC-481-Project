@@ -24,10 +24,20 @@ namespace CPSC_481_Project
             InitializeComponent();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        private void Pay_OnClick(object sender, RoutedEventArgs e)
+        {
+            PayButton?.Invoke();
         }
 
+        public event Event BackButton;
+        public event Event PayButton;
+
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+            BackButton?.Invoke();
+        }
     }
+
+    public delegate void Event();
 }

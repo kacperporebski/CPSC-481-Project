@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Project"
         mc:Ignorable="d"
-        Title="OrderList" Height="1024" Width="1366">
+        Title="OrderList" Height="1024" Width="1366" WindowStartupLocation="CenterOwner">
 
     <Border BorderThickness="1" BorderBrush="Black" Background="LightBlue">
         <Grid Margin="0,31,0,73">
             <Border BorderThickness="1" BorderBrush="Black" Margin="0,-28,0,849">
                 <Grid>
                     <Label Content="D I V E R SE" FontSize="35" FontFamily="Palatino Linotype" HorizontalAlignment="Center" />
-                    <Button Content="B A C K" FontSize="20" FontFamily="Palatino Linotype" BorderThickness="1" BorderBrush="Black" Margin="0,0,1133,0" />
+                    <Button Content="B A C K" FontSize="20" FontFamily="Palatino Linotype" BorderThickness="1" BorderBrush="Black" Margin="0,0,1133,0" Click="Back_OnClick" />
                 </Grid>
 
             </Border>
@@ -48,7 +48,7 @@
 
             </StackPanel>
 
-            <Button Content="P A Y " FontSize="25" FontFamily="Palatino Linotype" BorderThickness="1.5" BorderBrush="Black" Margin="538,880,524,-47"/>
+            <Button Content="P A Y " FontSize="25" FontFamily="Palatino Linotype" BorderThickness="1.5" BorderBrush="Black" Margin="538,880,524,-47" Click="Pay_OnClick"/>
         </Grid>
     </Border>
 </Window>
