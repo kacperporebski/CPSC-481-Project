@@ -44,10 +44,13 @@ namespace CPSC_481_Project
             dialog.Owner = _owner;
             Editting?.Invoke(true);
             dialog.Show();
+           
             dialog.Closing += (sender, e) =>
             {
                 //do stuff with input
-                Name = dialog.InputText;
+                var dialog = (MyDialog) sender;
+                if (!dialog.Canceled)
+                     Name = dialog.InputText;
                 CanEdit = false;
                 Editting?.Invoke(false);
             };
