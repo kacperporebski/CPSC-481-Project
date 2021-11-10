@@ -54,6 +54,7 @@ namespace CPSC_481_Project
             SourceInitialized += (s, a) =>
             {
                 _confirmation = new OrderList();
+                _confirmation.DataContext = MainWindowData.OrderModel;
                 _confirmation.Owner = this;
 
                 _thankYouScreen = new ThankYouScreen();

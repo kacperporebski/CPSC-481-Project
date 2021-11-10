@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Project"
         mc:Ignorable="d"
-        Title="OrderList" Height="1024" Width="1366" WindowStartupLocation="CenterOwner">
+        Title="OrderList" Height="1024" Width="1366" WindowStartupLocation="CenterOwner"
+        d:DataContext="{d:DesignInstance local:OrderViewModel}">
 
     <Border BorderThickness="1" BorderBrush="Black" Background="LightBlue">
         <Grid Margin="0,31,0,73">
@@ -18,34 +19,41 @@
             </Border>
             <Label Content="S E L E C T  O R D E R  T O  P A Y" FontSize="30" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="443,66,432,0" Width="481"/>
             <StackPanel Margin="48,138,59,10">
-                <Border BorderThickness="2" BorderBrush="Black">
-                    <Button Background="WhiteSmoke">
-                        <TextBlock FontSize ="25" FontFamily="Palatino Linotype" xml:space="preserve" Width="1231" Height="339" >
-                        <TextBlock Text = "Person 1" TextDecorations="Underline"/> 
-                                         
-                        Steak                                                                                                                            $27
-                        Steak                                                                                                                            $27
-                    
-                        Total                                                                                                                            $54
-                    </TextBlock>
-                    </Button>
-
-                </Border>
-
-                <Border BorderThickness="2" BorderBrush="Black">
-                    <Button Background="WhiteSmoke" Height="346">
-                        <TextBlock FontSize ="25" FontFamily="Palatino Linotype" xml:space="preserve" Width="1236" Height="374" >
-                        <TextBlock Text = "Person 2" TextDecorations="Underline"/> <LineBreak/>
-                        Steak                                                                                                                            $27
-                        Ramen                                                                                                                         $17
-                    
-                        Total                                                                                                                             $44
-                    </TextBlock>
-                    </Button>
-
-                </Border>
-
-
+                <local:MyScrollViewer>
+                    <ItemsControl x:Name="Items" ItemsSource="{Binding People}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Background="WhiteSmoke">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="30"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text ="{Binding Name}" TextDecorations="Underline" HorizontalAlignment="Center"/>
+                                         <ScrollViewer Grid.Row="1" x:Name="ScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Width="1227">
+                                        <ItemsControl x:Name="Items" ItemsSource="{Binding Order.OrderInformation}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1100"/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="{Binding Item}"/>
+                                                        <TextBlock Grid.Column="1"  Text="{Binding Price}"/>
+                                                    </Grid>
+                                                    </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                         </ScrollViewer>
+                                        <TextBlock Grid.Row="2" Text="Total Cost" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </local:MyScrollViewer>
             </StackPanel>
 
             <Button Content="P A Y " FontSize="25" FontFamily="Palatino Linotype" BorderThickness="1.5" BorderBrush="Black" Margin="538,880,524,-47" Click="Pay_OnClick"/>
