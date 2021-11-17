@@ -16,7 +16,7 @@
         <Button Grid.Row="0" Height="300" Width="450" Command="{Binding ConfigureCommand}">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Height="355" Width="450">
+                    <Image Height="355" Width="450" Stretch="Uniform">
                         <Image.Source>
                             <Binding Path="ImagePath" />
                         </Image.Source>
