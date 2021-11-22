@@ -39,23 +39,28 @@
                                         </ItemsControl.ItemsPanel>
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
-                                                <StackPanel>
-                                                    <Grid>
+                                                <Grid>
                                                         <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
                                                             <ColumnDefinition Width="*"/>
                                                             <ColumnDefinition Width="80"/>
                                                             <ColumnDefinition Width="20"/>
                                                             <ColumnDefinition Width="20"/>
                                                         </Grid.ColumnDefinitions>
-                                                        <TextBlock Grid.Column="0" Text="{Binding Item}" FontSize="15" FontFamily="Palatino Linotype" Margin="10,0, 0, 0"/>
-                                                        <TextBlock Grid.Column="1" FontSize="15">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Item}" FontSize="15" FontFamily="Palatino Linotype" Margin="10,0, 0, 0"/>
+                                                        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding ExtraInformation}" FontSize="15" FontFamily="Palatino Linotype" Margin="30,0, 0, 0"/>
+                                                        <TextBlock Grid.Row="0" Grid.Column="2" FontSize="15">
                                                             <TextBlock.Text>
                                                                 <MultiBinding StringFormat="{}Price: ${0}">
                                                                     <Binding Path="Price"></Binding>
                                                                 </MultiBinding>
                                                             </TextBlock.Text>
                                                         </TextBlock>
-                                                        <Button Grid.Column="2" Content="X" >
+                                                        <Button Grid.Row="0" Grid.Column="3" Content="X" >
                                                             <Button.Resources>
                                                                 <Style TargetType="Border">
                                                                     <Setter Property="CornerRadius" Value="5"/>
@@ -63,7 +68,6 @@
                                                             </Button.Resources>
                                                         </Button>
                                                     </Grid>
-                                                </StackPanel>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>

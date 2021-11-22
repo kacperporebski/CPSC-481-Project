@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
@@ -13,7 +14,7 @@ namespace CPSC_481_Project
     {
         public ObservableCollection<Ingredient> Ingredients { get; }
         public ObservableCollection<Substitute> Substitutes { get; }
-
+        
         public List<Filter> Filters { get; }
 
         public Visibility CookingOptionsEnabled { get; }
@@ -40,6 +41,7 @@ namespace CPSC_481_Project
         private string _name;
         private string _price;
         private string _description;
+        [CanBeNull] public readonly string ShortName;
         public string ImagePath => _path;
         public string Name => _name;
         public string Price => _price;
@@ -50,16 +52,15 @@ namespace CPSC_481_Project
         public ICommand AddCommand => _addCommand;
         private RelayCommand _addCommand;
 
-        private int _quantity;
-        public int Quantity => _quantity;
 
 
-        public FoodItemView(string path, string name, string price, string description, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = true, [CanBeNull] List<Filter> filters = null)
+        public FoodItemView(string path, string name, string price, string description, [CanBeNull] string shortName = null, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = true, [CanBeNull] List<Filter> filters = null)
         {
             Filters = filters ?? new List<Filter>();
             _commandI = new RelayCommand(IncreaseQuantity);
             _commandD = new RelayCommand(DecreaseQuantity);
             _description = description;
+            ShortName = shortName;
             Ingredients = new ObservableCollection<Ingredient>();
             if (ingredients is not null)
                 foreach (var s in ingredients)
