@@ -13,6 +13,36 @@
         </Grid.RowDefinitions>
         <local:MyScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
             <ListBox SelectedItem="{Binding SelectedPerson, Mode=TwoWay}" ItemsSource="{Binding People}" Background="AliceBlue">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True" >
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Background" Value="LightSeaGreen" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <Border
+                                                BorderThickness="{TemplateBinding Border.BorderThickness}"
+                                                Padding="{TemplateBinding Control.Padding}"
+                                                BorderBrush="{TemplateBinding Border.BorderBrush}"
+                                                Background="{TemplateBinding Panel.Background}"
+                                                SnapsToDevicePixels="True">
+                                                <ContentPresenter
+                                                    Content="{TemplateBinding ContentControl.Content}"
+                                                    ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                                    HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                                                    VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Width="290">
