@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
@@ -17,6 +18,8 @@ namespace CPSC_481_Project
         public RelayCommand _removePerson;
         public ICommand EditPersonName => _editPersonName;
         private RelayCommand _editPersonName;
+
+        public double TotalCost => Order.OrderInformation.Sum(orderInfo => orderInfo.Price);
 
 
         public Person(string name)

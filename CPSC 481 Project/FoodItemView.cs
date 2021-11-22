@@ -14,6 +14,8 @@ namespace CPSC_481_Project
         public ObservableCollection<Ingredient> Ingredients { get; }
         public ObservableCollection<Substitute> Substitutes { get; }
 
+        public List<Filter> Filters { get; }
+
         public Visibility CookingOptionsEnabled { get; }
 
         private CookingPref _currentPref;
@@ -52,9 +54,9 @@ namespace CPSC_481_Project
         public int Quantity => _quantity;
 
 
-        public FoodItemView(string path, string name, string price, string description, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = false)
+        public FoodItemView(string path, string name, string price, string description, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = true, [CanBeNull] List<Filter> filters = null)
         {
-
+            Filters = filters ?? new List<Filter>();
             _commandI = new RelayCommand(IncreaseQuantity);
             _commandD = new RelayCommand(DecreaseQuantity);
             _description = description;
@@ -132,6 +134,14 @@ namespace CPSC_481_Project
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    
+
+    public enum Filter
+    {
+        LactoseFree,
+        GlutenFree,
+        PeanutFree,
+        NotSpicy,
+    }
+
     public delegate void FoodItemChanged(FoodItemView item);
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -149,38 +146,4 @@ namespace CPSC_481_Project
     public delegate void BoolEvent(bool update);
 
     public delegate void PersonEvent(Person p);
-
-    public class OrderSummary:INotifyPropertyChanged
-    {
-        private List<OrderInformation> _orderInformation = new ();
-        public ObservableCollection<OrderInformation> OrderInformation {
-            get
-            {
-                var collection = new ObservableCollection<OrderInformation>();
-                foreach (var order in _orderInformation)
-                {
-                    collection.Add(order);
-                }
-                return collection;
-            }
-        }
-
-        public OrderSummary()
-        {
-        }
-
-        public void AddItemToOrder(FoodItemView item)
-        {
-            _orderInformation.Add(new OrderInformation(item.Name, Double.Parse( item.Price.Split('$')[1])));
-            OnPropertyChanged(nameof(OrderInformation));
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }

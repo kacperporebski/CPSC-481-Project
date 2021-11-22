@@ -84,6 +84,8 @@
     <Compile Include="OrderList.xaml.cs">
       <DependentUpon>OrderList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderSummary.cs" />
+    <Compile Include="OrderViewModel.cs" />
     <Compile Include="PeopleConfig.xaml.cs">
       <DependentUpon>PeopleConfig.xaml</DependentUpon>
     </Compile>
