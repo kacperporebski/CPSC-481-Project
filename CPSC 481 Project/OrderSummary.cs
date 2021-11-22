@@ -26,9 +26,14 @@ namespace CPSC_481_Project
         {
         }
 
+        public void Clear()
+        {
+            _orderInformation = new();
+        }
+
         public void AddItemToOrder(FoodItemView item)
         {
-            _orderInformation.Add(new OrderInformation(item.Name, Double.Parse( item.Price.Split('$')[1])));
+            _orderInformation.Add(new OrderInformation(item, item.Name, Double.Parse( item.Price.Split('$')[1])));
             OnPropertyChanged(nameof(OrderInformation));
         }
 

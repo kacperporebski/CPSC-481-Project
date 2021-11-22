@@ -5,10 +5,13 @@
         public string Item { get; }
         public double Price { get; }
 
-        public OrderInformation(string s, double p)
+        public OrderInformation(FoodItemView view, string s, double p)
         {
+            View = view;
             Item = s;
             Price = p;
         }
+
+        public FoodItemView View { get; set; }
     }
 }

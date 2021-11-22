@@ -40,7 +40,7 @@
 										</Grid.RowDefinitions>
 										<TextBlock Text ="{Binding Name}" TextDecorations="Underline" HorizontalAlignment="Center"/>
 										<ScrollViewer Grid.Row="1" x:Name="ScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Width="1227">
-											<ItemsControl x:Name="Items" ItemsSource="{Binding Order.OrderInformation}">
+											<ItemsControl x:Name="Items" ItemsSource="{Binding Ordered.OrderInformation}">
 												<ItemsControl.ItemTemplate>
 													<DataTemplate>
 														<Grid>

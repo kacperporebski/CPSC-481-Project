@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
@@ -78,13 +79,16 @@ namespace CPSC_481_Project
         private bool _isCallingServer;
         private string _callServerText = "C A L L  S E R V E R";
 
+
+
         public MainWindowViewModel(Window owner)
         {
             FoodList = new FoodListViewModel();
-            _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
             OrderModel = new OrderViewModel(owner);
+            _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
+           
         }
-
+        
         private async void CallingServer(object obj)
         {
             _isCallingServer = true;

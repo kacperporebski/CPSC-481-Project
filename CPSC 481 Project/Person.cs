@@ -11,7 +11,8 @@ namespace CPSC_481_Project
     {
         public string Name { get; set; }
         public bool CanDelete { get; set; } = true;
-        public OrderSummary Order { get; }
+        public OrderSummary Ordering { get; }
+        public OrderSummary Ordered { get; }
         public bool CanEdit;
         private Window _owner;
         public ICommand RemovePerson => _removePerson;
@@ -19,13 +20,14 @@ namespace CPSC_481_Project
         public ICommand EditPersonName => _editPersonName;
         private RelayCommand _editPersonName;
 
-        public double TotalCost => Order.OrderInformation.Sum(orderInfo => orderInfo.Price);
+        public double TotalCost => Ordered.OrderInformation.Sum(orderInfo => orderInfo.Price);
 
 
         public Person(string name)
         {
             Name = name;
-            Order = new OrderSummary();
+            Ordering = new OrderSummary();
+            Ordered = new OrderSummary();
             _editPersonName = new RelayCommand(EditName, (_) => !CanEdit);
             _removePerson = new RelayCommand(RemovePersonClicked, (_) =>  CanDelete);
         }

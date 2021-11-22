@@ -1,28 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using CPSC_481_Project.Annotations;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
-using CPSC_481_Project.Annotations;
 
 namespace CPSC_481_Project
 {
-    public class OrderViewModel:INotifyPropertyChanged
+    public class OrderViewModel : INotifyPropertyChanged
     {
         private readonly Window _owner;
         private List<Person> _peoplesCurrentOrders;
-        
+
         public ICommand AddPerson => _addPerson;
         private RelayCommand _addPerson;
 
         [CanBeNull]
-        public Person SelectedPerson { 
-            get; 
+        public Person SelectedPerson
+        {
+            get;
             set;
         }
-        
+
         public ObservableCollection<Person> People
         {
             get
@@ -37,10 +38,12 @@ namespace CPSC_481_Project
             }
         }
 
-        
+
         private int _personCount = 1;
         private int _personNumToAppend = 1;
 
+        public ICommand ConfirmCommand => _confirmCommand;
+        private RelayCommand _confirmCommand;
         public OrderViewModel(Window owner)
         {
             _addPerson = new RelayCommand(AddPersonPressed);
@@ -51,8 +54,12 @@ namespace CPSC_481_Project
             _peoplesCurrentOrders.Add(p);
             SelectedPerson = p;
 
+
+            _confirmCommand =
+            new RelayCommand(Confirmed, (_) => People.Any(x => x.Ordering.OrderInformation.Count > 0));
+
             UpdateModel();
-            
+
         }
 
         private void UpdateModel()
@@ -70,7 +77,7 @@ namespace CPSC_481_Project
             _peoplesCurrentOrders.Remove(p);
             _personCount--;
 
-            if(_personCount==1)
+            if (_personCount == 1)
                 _peoplesCurrentOrders.First().CanDelete = false;
 
             p.Deleting -= DeletePerson;
@@ -103,9 +110,9 @@ namespace CPSC_481_Project
 
         public void AddToOrder(FoodItemView item)
         {
-            if(SelectedPerson is null)
+            if (SelectedPerson is null)
                 return;
-            _peoplesCurrentOrders.First(x => x.Name.Equals(SelectedPerson.Name)).Order.AddItemToOrder(item);
+            _peoplesCurrentOrders.First(x => x.Name.Equals(SelectedPerson.Name)).Ordering.AddItemToOrder(item);
             OnPropertyChanged(nameof(People));
         }
 
@@ -115,6 +122,20 @@ namespace CPSC_481_Project
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void Confirmed(object obj)
+        {
+            foreach (var person in People)
+            {
+                foreach (var item in person.Ordering.OrderInformation)
+                {
+                    person.Ordered.AddItemToOrder(item.View);
+                }
+
+                person.Ordering.Clear();
+                OnPropertyChanged(nameof(People));
+            }
         }
     }
 }
