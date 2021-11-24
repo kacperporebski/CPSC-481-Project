@@ -100,27 +100,162 @@ namespace CPSC_481_Project
             _food = new ();
             _food.Add(CategoryType.Mains, new List<FoodItemView>
             {
-                new ("Steak.jpg", "Steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", "Steak", new List<string>(){"Sauce", "Mashed Potatoes", "Asparagus"}, new List<string>{ "Brocoli instead of Asparagus" }, true, new List<Filter>
+                new ("-Steak.jpg", "Steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", "Steak", new List<string>(){"Sauce", "Mashed Potatoes", "Asparagus"}, new List<string>{ "Brocoli instead of Asparagus" }, true, new List<Filter>
                     {
-                        Filter.GlutenFree, Filter.LactoseFree
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
                     }),
-                new ("NashvilleChicken.jpg", "Nashviille Hot Chicken Sandwich", "Price: $22", "Hot chicken thigh, slaw, mayonnaise, on a toasted Belgian waffle","NashV Chicken", new List<string>(){"Ingredient 1", "Ingredient 2"}, new List<string>{ "Lettuce Bun" }),
-                new ("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new ("ChickenTeriyaki.jpg", "Teriyaki Chicken Rice Bowl", "Price: $16", "Description goes here","Teriyaki Bowl", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("Spaghetti.jpg", "Spaghetti", "Price: $20", "Description goes here",null, new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("ChickenEnchiladas.jpg", "Chicken Enchiladas", "Price: $19", "Description goes here goes here","Chicken Ench", new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                new ("Steak.jpg", "Steak", "Price: $27", "AAA New York Striploin served with mashed potatoes, grilled asparagus and mushroom sauce", null,new List<string>(){"Broccoli", "Mashed Potatoes"}, new List<string>{ "Lettuce Bun" }),
-                
+                new ("-NashvilleChicken.jpg", "Nashville Hot Chicken Sandwich", "Price: $22", "Hot chicken thigh, slaw, mayonnaise, on a toasted Belgian waffle","NashV Chicken", new List<string>(){"Coleslaw", "Mayonnaise", "Waffle Bun"}, new List<string>{ "Lettuce Bun" },false,new List<Filter>
+                    {
+                        Filter.LactoseFree, Filter.PeanutFree
+
+                    }),
+                new ("-R (1).jpg", "Ramen", "Price: $17", "Chicken ramen, mung bean sprouts, green onions, and boiled egg in warm homemade broth" ,null, new List<string>(){"Noodles", "Broth","Mung Bean Sprouts","Green Onions","Boiled Egg"}, null, false, new List<Filter>
+                {
+                    Filter.PeanutFree, Filter.NotSpicy
+
+                }),
+                new ("-ChickenTeriyaki.jpg", "Teriyaki Chicken Rice Bowl", "Price: $16", "Sesame marinated chicken stir fried with broccoli on a bed of rice","Teriyaki Bowl", new List<string>(){"Broccoli", "Rice","Sesame Seeds"}, null,false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new ("-spaghetti.jpg", "Spaghetti", "Price: $20", "Spaghetti in homemade tomato sauce",null, new List<string>(){"Tomato Sauce"}, null, false, new List<Filter>
+                    {
+                        Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new ("-enchiladas.jpg", "Chicken Enchiladas", "Price: $19", "Sauteed chicken, green chiles, onions, beans, and shredded mozzarella cheese","Chicken Ench", new List<string>(){"Chicken","Green Chiles","Onions","Beans","Cheese"}, null, false, new List<Filter>
+                {
+                    Filter.PeanutFree
+
+                }),
+                new ("-tunapoke.jpg", "Ahi Tuna Poke Bowl", "Price: $17", "Fresh ahi tuna, sushi rice, avocado, mango, cilantro, topped with spicy mayonnaise", "Tuna Poke",new List<string>(){"Tuna", "Sushi Rice","Avocado","Mango","Cilantro","Spicy Mayo"}, new List<string>{ "Cauliflower Rice","Brown Rice" },false,new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree
+
+                    }),
+                new ("-curry.jpg", "Chicken Curry", "Price: $20.25", "Japanese chicken coconut milk based-curry with chicken thighs, carrots, potatoes, and onions, with a bed of rice ",null, new List<string>(){"Chicken", "Sushi Rice","Carrot","Potato","Onion","Rice"}, new List<string>{ "Tofu instead of chicken"},false,new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.PeanutFree
+
+                    }),
+            });
+            _food.Add(CategoryType.Appetizers, new List<FoodItemView>
+            {
+                new("-chickenwings.jpg", "Buffalo Chicken Wings", "Price: $15.00", "Crispy baked chicken wings in buffalo sauce with a side of parmesan dip and celery", "BF Wings", null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.PeanutFree
+
+                    }),
+                new("-fries.jpg", "French Fries", "Price: $11.25", "Crispy french fries with a side of ketchup",null,  new List<string>(){"Salt"}, null, false, new List<Filter>
+                    {
+                        Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy // Not gluten free because the fryer could be contaminated with stuff that has gluten?
+
+                    }),
+                new("-yamfries.jpg", "Yam Fries", "Price: $11.25", "Sweet yam fries topped with oregano",null, new List<string>(){"Salt", "Oregano"}, null, false, new List<Filter>
+                    {
+                        Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-garlicbread.jpg", "Garlic Bread", "Price: $5.25", "Oven toasted baguette slices with extra virgin olive oil, parmesan, and herbs",null, null, null, false, new List<Filter>
+                    {
+                       Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-potstickers.jpg", "Potstickers", "Price: $5.65", "Steamed dumplings filled with ground pork, napa cabbage, and mushroom",null, null, null, false, new List<Filter>
+                    {
+                        Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-calamari.jpeg", "Calamari", "Price: $13.75", "Deep fried calamari with ketchup",null, null, null, false, new List<Filter>
+                    {
+                        Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+
             });
             _food.Add(CategoryType.Drinks, new List<FoodItemView>
             {
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
-                new("R (1).jpg", "Ramen", "Price: $17", "Description goes here" ,null, new List<string>(){"Ramen", "Broth"}, new List<string>(){"Egg"}),
+                new("-icedtea.jpg", "Iced Tea", "Price: $3.25", "355ml can",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-pepsi.jpg", "Pepsi", "Price: $3.25", "355ml can",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-rootbeer.jpg", "Root Beer", "Price: $3.25", "355ml can",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-7up.jpg", "7 Up", "Price: $3.25", "355ml can",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-dasani.jpg", "Dasani Water", "Price: $3.00", "591ml bottle",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-applejuice.jpg", "Apple Juice", "Price: $4.50", "Homemade apple juice",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-orangejuice.jpg", "Orange Juice", "Price: $4.50", "Homemade orange juice",null, null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-coffee.jpg", "Hot Coffee", "Price: $3.95", "Medium roast coffee with cream and sugar",null, new List<string>(){"Cream", "Sugar"}, new List<string>(){"Milk instead of cream","Honey instead of sugar"}, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-hotchocolate.jpg", "Hot Chocolate", "Price: $4.20", "Extra thick and creamy hot chocolate",null, new List<string>(){"Chocolate Syrup"}, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+            });
+            _food.Add(CategoryType.Dessert, new List<FoodItemView>
+            {
+                new("-gticecream.jpg", "Green Tea Ice Cream", "Price: $4.75", "Creamy matcha flavoured ice cream","GT Ice cream", null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-cheesecake.jpg", "Raspberry New York Cheesecake", "Price: $6.25", "New York styled cheesecake slice and graham cracker crust topped with raspberry swirl", "NY Cheesecake", null, null, false, new List<Filter>
+                    {
+                        Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-pie.jpg", "Key Lime Pie", "Price: $5.25", "Fresh limes, graham cracker crust and hand whipped cream",null, new List<string>(){"Whipped Cream"}, null, false, new List<Filter>
+                    {
+                        Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-tiramisu.jpg", "Tiramisu", "Price: $6.25", "Layered tiramisu cake",null, null, null, false, new List<Filter>
+                    {
+                        Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-castella.jpg", "Castella Cake", "Price: $6.15", "Sweet and moist sponge cake", null, null, null, false, new List<Filter>
+                    {
+                       Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy
+
+                    }),
+                new("-peanutpie.jpg", "Peanut Pecan Pie", "Price: $6.15", "Sweet peanut butter and pecan pie", null, null, null, false, new List<Filter>
+                    {
+                         Filter.NotSpicy
+
+                    }),
+
+
             });
             OnPropertyChanged();
         }

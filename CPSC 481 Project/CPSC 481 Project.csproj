@@ -172,22 +172,91 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Steak.jpg" />
+    <Resource Include="-Steak.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="R %281%29.jpg" />
+    <Resource Include="-R %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="NashvilleChicken.jpg" />
+    <Resource Include="-NashvilleChicken.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ChickenTeriyaki.jpg" />
+    <Resource Include="-ChickenTeriyaki.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ChickenEnchiladas.jpg" />
+    <Resource Include="-spaghetti.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Spaghetti.jpg" />
+    <Resource Include="-tunapoke.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-icedtea.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-pepsi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-rootbeer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-7up.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-dasani.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-coffee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-hotchocolate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-applejuice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-orangejuice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-chickenwings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-fries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-yamfries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-garlicbread.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-potstickers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-calamari.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-gticecream.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-cheesecake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-pie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-tiramisu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-castella.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-curry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-enchiladas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="-peanutpie.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
