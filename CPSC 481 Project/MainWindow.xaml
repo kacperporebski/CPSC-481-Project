@@ -48,7 +48,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="CallServerButton"  Content="{Binding CallServerText}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" Command="{Binding CallServerCommand}" FontSize="15" FontFamily="Palatino Linotype"/>
-            <Button x:Name="PayButton" Content="P A Y" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" FontSize="20" FontFamily="Palatino Linotype" Click="PayButton_OnClick"/>
+            <Button x:Name="PayButton" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" FontSize="20" FontFamily="Palatino Linotype" Click="PayButton_OnClick">
+                <Image Source="cart.png"/>
+            </Button>
         </Grid>
 
         <!--FILTER-->

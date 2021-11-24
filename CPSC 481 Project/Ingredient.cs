@@ -21,18 +21,20 @@ namespace CPSC_481_Project
         {
             Description = description;
             _quantity = IngredientQuantity.Normal;
-            _commandI = new RelayCommand(IncreaseQuantity);
-            _commandD = new RelayCommand(DecreaseQuantity);
+            _commandI = new RelayCommand(IncreaseQuantity, (_)=> _quantity is not IngredientQuantity.Extra);
+            _commandD = new RelayCommand(DecreaseQuantity, (_) => _quantity is not IngredientQuantity.None);
         }
 
         private void IncreaseQuantity(object obj)
         {
+            if(Quantity is IngredientQuantity.Extra) return;
             _quantity++;
             OnPropertyChanged(nameof(Quantity));
         }
 
         private void DecreaseQuantity(object obj)
         {
+            if (Quantity is IngredientQuantity.None) return;
             _quantity--;
             OnPropertyChanged(nameof(Quantity));
         }
