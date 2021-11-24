@@ -85,6 +85,7 @@ namespace CPSC_481_Project
         {
             FoodList = new FoodListViewModel();
             OrderModel = new OrderViewModel(owner);
+            OrderModel.SelectedPersonChanged += FoodList.UpdateSelectedPerson;
             _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
            
         }

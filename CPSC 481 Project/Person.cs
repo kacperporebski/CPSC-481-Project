@@ -58,7 +58,9 @@ namespace CPSC_481_Project
                      Name = dialog.InputText;
                 CanEdit = false;
                 Editting?.Invoke(false);
+                OnPropertyChanged("SelectedPerson");
             };
+            OnPropertyChanged("SelectedPerson");
         }
 
         public event PersonEvent Deleting;

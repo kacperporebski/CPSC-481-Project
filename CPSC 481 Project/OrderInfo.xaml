@@ -60,7 +60,7 @@
                                                                 </MultiBinding>
                                                             </TextBlock.Text>
                                                         </TextBlock>
-                                                        <Button Grid.Row="0" Grid.Column="3" Content="X" >
+                                                        <Button Grid.Row="0" Grid.Column="3" Content="X" Command="{Binding RemoveCommand}" >
                                                             <Button.Resources>
                                                                 <Style TargetType="Border">
                                                                     <Setter Property="CornerRadius" Value="5"/>

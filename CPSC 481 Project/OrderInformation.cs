@@ -1,6 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.CodeDom;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Input;
 using CPSC_481_Project.Annotations;
 
 namespace CPSC_481_Project
@@ -10,6 +13,8 @@ namespace CPSC_481_Project
         public string Item { get; }
         public double Price { get; }
 
+        public event RemoveItem RemoveMe;
+
         public OrderInformation(FoodItemView view, string s, double p)
         {
             View = view;
@@ -17,6 +22,13 @@ namespace CPSC_481_Project
             Price = p;
 
             ExtraInformation = GetInfo(view);
+
+            _removeCommand = new RelayCommand(Remove);
+        }
+
+        private void Remove(object obj)
+        {
+            RemoveMe?.Invoke(this);
         }
 
         private string GetInfo(FoodItemView view)
@@ -45,6 +57,12 @@ namespace CPSC_481_Project
         public FoodItemView View { get; set; }
 
         public string ExtraInformation { get; }
-        
+
+
+        public ICommand RemoveCommand => _removeCommand;
+        private readonly RelayCommand _removeCommand;
+
     }
+
+    public delegate void RemoveItem(OrderInformation ItemToRemove);
 }

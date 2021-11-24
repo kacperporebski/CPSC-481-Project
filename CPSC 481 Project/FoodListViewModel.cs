@@ -312,6 +312,17 @@ namespace CPSC_481_Project
             _notSpicyChecked = notSpicyChecked;
             OnPropertyChanged(nameof(FoodItems));
         }
+
+        public void UpdateSelectedPerson(Person p)
+        {
+            foreach (var list in _food.Values)
+            {
+                foreach (var item in list)
+                {
+                    item.UpdateSelectedPerson($"{p.Name} is Selected");
+                }
+            }
+        }
     }
 
     public class Category
