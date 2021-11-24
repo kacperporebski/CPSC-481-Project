@@ -54,7 +54,7 @@ namespace CPSC_481_Project
 
 
 
-        public FoodItemView(string path, string name, string price, string description, [CanBeNull] string shortName = null, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = true, [CanBeNull] List<Filter> filters = null)
+        public FoodItemView(string path, string name, string price, string description, [CanBeNull] string shortName = null, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = false, [CanBeNull] List<Filter> filters = null)
         {
             Filters = filters ?? new List<Filter>();
             _commandI = new RelayCommand(IncreaseQuantity);
