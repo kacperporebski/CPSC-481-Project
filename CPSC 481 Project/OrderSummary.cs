@@ -33,9 +33,17 @@ namespace CPSC_481_Project
 
         public void AddItemToOrder(FoodItemView item)
         {
-            _orderInformation.Add(item.ShortName is not null
+           var orderInfo = item.ShortName is not null
                 ? new OrderInformation(item, item.ShortName, Double.Parse(item.Price.Split('$')[1]))
-                : new OrderInformation(item, item.Name, Double.Parse(item.Price.Split('$')[1])));
+                : new OrderInformation(item, item.Name, Double.Parse(item.Price.Split('$')[1]));
+           orderInfo.RemoveMe += RemoveItemFromOrder;
+           _orderInformation.Add(orderInfo);
+            OnPropertyChanged(nameof(OrderInformation));
+        }
+
+        private void RemoveItemFromOrder(OrderInformation itemtoremove)
+        {
+            _orderInformation.Remove(itemtoremove);
             OnPropertyChanged(nameof(OrderInformation));
         }
 
