@@ -58,9 +58,6 @@ namespace CPSC_481_Project
         public ICommand Mains => _mains;
         private readonly RelayCommand _mains;
 
-        public ICommand Entrees => _entrees;
-        private readonly RelayCommand _entrees;
-
         private List<CategoryType> _whiteList;
 
         public List<Filter> CurrentFilter
@@ -93,9 +90,6 @@ namespace CPSC_481_Project
             _desserts = new RelayCommand(SetDesserts);
             _drinks = new RelayCommand(SetDrinks);
             _mains = new RelayCommand(SetMains);
-            _entrees = new RelayCommand(SetEntrees);
-
-
 
             _food = new ();
             _food.Add(CategoryType.Mains, new List<FoodItemView>
@@ -259,13 +253,7 @@ namespace CPSC_481_Project
             });
             OnPropertyChanged();
         }
-
-        private void SetEntrees(object obj)
-        {
-            _whiteList = new List<CategoryType>() {CategoryType.Entrees};
-            OnPropertyChanged(nameof(FoodItems));
-        }
-
+        
         private void SetMains(object obj)
         {
             _whiteList = new List<CategoryType>() { CategoryType.Mains };
@@ -292,7 +280,7 @@ namespace CPSC_481_Project
 
         private void SetAllCategories(object obj)
         {
-            _whiteList = new List<CategoryType>() { CategoryType.Appetizers, CategoryType.Entrees, CategoryType.Mains, CategoryType.Drinks, CategoryType.Dessert };
+            _whiteList = new List<CategoryType>() { CategoryType.Appetizers, CategoryType.Mains, CategoryType.Drinks, CategoryType.Dessert };
             OnPropertyChanged(nameof(FoodItems));
         }
 
@@ -349,7 +337,6 @@ namespace CPSC_481_Project
         Mains,
         Appetizers,
         Drinks,
-        Entrees,
         Dessert
     }
 }

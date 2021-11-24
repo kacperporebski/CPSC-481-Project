@@ -20,7 +20,6 @@
             <StackPanel x:Name="Box2" Background="AliceBlue" Visibility="Collapsed" Width="300">
             <MenuItem Header="A L L" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding AllCategories}"/>
             <MenuItem Header="A P P E T I Z E R S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Appetizers}"/>
-            <MenuItem Header="E N T R É E S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Entrees}"/>
                 <MenuItem Header="M A I N S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Mains}"/>
             <MenuItem Header="D R I N K S" Click="MenuItem_OnClick" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Drinks}"/>
                 <MenuItem Header="D E S S E R T S" FontSize="15" FontFamily="Palatino Linotype" Height="50" Command="{Binding Desserts}"/>
