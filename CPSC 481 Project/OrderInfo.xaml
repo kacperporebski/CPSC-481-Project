@@ -79,7 +79,7 @@
             </local:MyScrollViewer>
 
             <!--CONFIRM-->
-            <Button Grid.Row="3" Content="C O N F I R M" FontSize="45" FontFamily="Palatino Linotype" Background="SteelBlue" Command="{Binding ConfirmCommand}"/>
+            <Button Grid.Row="3" Content="     S E N D &#10;        T O &#10;K I T C H E N" FontSize="24" FontFamily="Palatino Linotype" Background="SteelBlue" Command="{Binding ConfirmCommand}"/>
 
             <!--ORDER TITLE-->
             <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black" Background="LightBlue">
