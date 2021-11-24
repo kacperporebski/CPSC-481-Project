@@ -15,6 +15,8 @@ namespace CPSC_481_Project
         private RelayCommand _commandD;
         private IngredientQuantity _quantity;
 
+        public bool Changed => _quantity is not IngredientQuantity.Normal;
+
         public Ingredient(string description)
         {
             Description = description;

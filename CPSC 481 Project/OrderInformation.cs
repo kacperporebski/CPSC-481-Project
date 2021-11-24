@@ -37,7 +37,8 @@ namespace CPSC_481_Project
 
             foreach (var ingredient in view.Ingredients)
             {
-                info += $"{ingredient.Description}: {ingredient.Quantity} \n";
+                if(ingredient.Changed)
+                    info += $"{ingredient.Description}: {ingredient.Quantity} \n";
             }
 
             foreach (var sub in view.Substitutes)
