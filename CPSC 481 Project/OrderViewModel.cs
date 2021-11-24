@@ -16,12 +16,19 @@ namespace CPSC_481_Project
 
         public ICommand AddPerson => _addPerson;
         private RelayCommand _addPerson;
+        public event PersonChanged SelectedPersonChanged;
+
+        private Person _selectedPerson;
 
         [CanBeNull]
         public Person SelectedPerson
         {
-            get;
-            set;
+            get => _selectedPerson;
+            set
+            {
+                _selectedPerson = value;
+                SelectedPersonChanged?.Invoke(value);
+            }
         }
 
         public ObservableCollection<Person> People
@@ -106,6 +113,7 @@ namespace CPSC_481_Project
                 x.CanEdit = value;
             }
             OnPropertyChanged(nameof(People));
+            SelectedPerson = _selectedPerson;
         }
 
         public void AddToOrder(FoodItemView item)
@@ -138,4 +146,6 @@ namespace CPSC_481_Project
             }
         }
     }
+
+    public delegate void PersonChanged(Person p);
 }

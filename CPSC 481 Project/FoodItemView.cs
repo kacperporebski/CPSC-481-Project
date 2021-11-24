@@ -52,6 +52,7 @@ namespace CPSC_481_Project
         public ICommand AddCommand => _addCommand;
         private RelayCommand _addCommand;
 
+        public string SelectedPerson { get; set; }
 
 
         public FoodItemView(string path, string name, string price, string description, [CanBeNull] string shortName = null, List<string> ingredients = null, List<string> subs = null, bool cookingPreference = true, [CanBeNull] List<Filter> filters = null)
@@ -62,6 +63,7 @@ namespace CPSC_481_Project
             _description = description;
             ShortName = shortName;
             Ingredients = new ObservableCollection<Ingredient>();
+            SelectedPerson = "Person 1 Selected";
             if (ingredients is not null)
                 foreach (var s in ingredients)
                 {
@@ -133,6 +135,12 @@ namespace CPSC_481_Project
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void UpdateSelectedPerson(string person)
+        {
+            SelectedPerson = person;
+            OnPropertyChanged(nameof(SelectedPerson));
         }
     }
 
