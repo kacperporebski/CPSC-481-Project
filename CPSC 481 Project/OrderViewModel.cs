@@ -149,6 +149,11 @@ namespace CPSC_481_Project
         }
 
         public event BoolEvent Keyboard;
+
+        public bool HasSomethingHasBeenOrdered(object o)
+        {
+            return _peoplesCurrentOrders.Exists(x => x.Ordered.OrderInformation.Any());
+        }
     }
 
     public delegate void PersonChanged(Person p);

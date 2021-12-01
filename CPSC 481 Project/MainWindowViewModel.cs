@@ -77,6 +77,11 @@ namespace CPSC_481_Project
 
         public ICommand CallServerCommand => _callServerCommand;
         private RelayCommand _callServerCommand;
+        public ICommand CartButtonCommand =>_cartButtonCommand;
+        public event Action CartButtonEvent;
+
+        private RelayCommand _cartButtonCommand;
+
         private bool _isCallingServer;
         private string _callServerText = "C A L L  S E R V E R";
         
@@ -88,7 +93,12 @@ namespace CPSC_481_Project
             OrderModel.Keyboard += UpdateKeyboardView;
             OrderModel.SelectedPersonChanged += FoodList.UpdateSelectedPerson;
             _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
-           
+            _cartButtonCommand = new RelayCommand(UpdateVisibility, OrderModel.HasSomethingHasBeenOrdered);
+        }
+
+        private void UpdateVisibility(object obj)
+        {
+            CartButtonEvent?.Invoke();
         }
 
         private void UpdateKeyboardView(bool value)

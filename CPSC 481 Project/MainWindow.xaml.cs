@@ -38,6 +38,7 @@ namespace CPSC_481_Project
             AddingToOrder = false;
             FiltersOpen = false;
             MainWindowData = new MainWindowViewModel(this);
+            MainWindowData.CartButtonEvent += UpdateVisiblities;
             foreach (var category in MainWindowData.FoodList.FoodItems)
             {
                 foreach (var item in category.FoodItems)
@@ -119,7 +120,7 @@ namespace CPSC_481_Project
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void PayButton_OnClick(object sender, RoutedEventArgs e)
+        private void UpdateVisiblities()
         {
             Visibility = Visibility.Collapsed;
             _confirmation.BackButton += () =>
