@@ -24,8 +24,8 @@ namespace CPSC_481_Project
         private bool AddingToOrder;
         private bool FiltersOpen;
         private MainWindowViewModel MainWindowData;
-        private OrderList _confirmation { get; set; }
-        private ThankYouScreen _thankYouScreen { get; set; }
+        [CanBeNull] private OrderList _confirmation { get; set; }
+        [CanBeNull] private ThankYouScreen _thankYouScreen { get; set; }
 
         public MainWindow()
         {
@@ -39,6 +39,24 @@ namespace CPSC_481_Project
             FiltersOpen = false;
             MainWindowData = new MainWindowViewModel(this);
             MainWindowData.CartButtonEvent += UpdateVisiblities;
+
+            if (_confirmation is not null)
+            {
+                _confirmation = new OrderList();
+                _confirmation.DataContext = MainWindowData.OrderModel;
+                _confirmation.Owner = this;
+                ChangeVisibilities();
+            }
+
+            if (_thankYouScreen is not null)
+            {
+                _thankYouScreen.Visibility = Visibility.Collapsed;
+                _thankYouScreen = new ThankYouScreen();
+                _thankYouScreen.Owner = this;
+                ChangeVisibilities();
+            }
+
+
             foreach (var category in MainWindowData.FoodList.FoodItems)
             {
                 foreach (var item in category.FoodItems)
