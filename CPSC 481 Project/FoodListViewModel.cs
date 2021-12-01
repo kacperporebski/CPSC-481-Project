@@ -303,6 +303,7 @@ namespace CPSC_481_Project
 
         public void UpdateSelectedPerson(Person p)
         {
+            if(p is null ) return;
             foreach (var list in _food.Values)
             {
                 foreach (var item in list)
