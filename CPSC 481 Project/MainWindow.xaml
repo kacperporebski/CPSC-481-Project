@@ -83,5 +83,6 @@
 
         <!--ORDER INFORMATION-->
         <local:OrderInfo x:Name="Orders"  Grid.Row="1" Grid.Column="3" DataContext="{Binding OrderModel}"></local:OrderInfo>
+        <Image Grid.RowSpan="5" Grid.ColumnSpan="4" VerticalAlignment ="Bottom" Height="440" Stretch="Fill" Source="keyboard.jpg" Visibility="{Binding Keyboard}"></Image>
     </Grid>
 </Window>

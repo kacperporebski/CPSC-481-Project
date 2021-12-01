@@ -108,6 +108,8 @@ namespace CPSC_481_Project
 
         private void UpdateEdittingCanExecute(bool value)
         {
+            Keyboard?.Invoke(value);
+
             foreach (var x in _peoplesCurrentOrders)
             {
                 x.CanEdit = value;
@@ -145,6 +147,8 @@ namespace CPSC_481_Project
                 OnPropertyChanged(nameof(People));
             }
         }
+
+        public event BoolEvent Keyboard;
     }
 
     public delegate void PersonChanged(Person p);

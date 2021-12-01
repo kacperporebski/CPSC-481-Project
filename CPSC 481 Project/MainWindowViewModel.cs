@@ -16,6 +16,7 @@ namespace CPSC_481_Project
         public OrderViewModel OrderModel { get; }
         public FoodListViewModel FoodList { get; }
 
+        public Visibility Keyboard { get; set; }
         public int NumFiltersSelected
         {
             get
@@ -78,18 +79,28 @@ namespace CPSC_481_Project
         private RelayCommand _callServerCommand;
         private bool _isCallingServer;
         private string _callServerText = "C A L L  S E R V E R";
-
-
-
+        
         public MainWindowViewModel(Window owner)
         {
+            Keyboard = Visibility.Hidden;
             FoodList = new FoodListViewModel();
             OrderModel = new OrderViewModel(owner);
+            OrderModel.Keyboard += UpdateKeyboardView;
             OrderModel.SelectedPersonChanged += FoodList.UpdateSelectedPerson;
             _callServerCommand = new RelayCommand(CallingServer, (_) => !_isCallingServer);
            
         }
-        
+
+        private void UpdateKeyboardView(bool value)
+        {
+            if (value) Keyboard = Visibility.Visible;
+            else
+            {
+                Keyboard = Visibility.Hidden;
+            }
+            OnPropertyChanged(nameof(Keyboard));
+        }
+
         private async void CallingServer(object obj)
         {
             _isCallingServer = true;
