@@ -3,6 +3,7 @@ KACPER POREBSKI
 
 STARTUP:
 Navigate to bin/Release and open 'CPSC 481 Project.exe'
+If that does not work, the code for the application is located at: https://github.com/kacperporebski/CPSC-481-Project
 
 BUGS AND WHAT TO AVOID:
 -If you click an item while the filter menu is open, it wont close. (Please avoid this)
