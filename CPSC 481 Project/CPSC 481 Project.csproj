@@ -265,7 +265,10 @@
     <Resource Include="keyboard.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="shrimp.jpg" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shrimp2.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
