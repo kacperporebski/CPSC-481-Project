@@ -136,9 +136,9 @@ namespace CPSC_481_Project
             });
             _food.Add(CategoryType.Appetizers, new List<FoodItemView>
             {
-                new("-chickenwings.jpg", "Buffalo Chicken Wings", "Price: $15.00", "Crispy baked chicken wings in buffalo sauce with a side of parmesan dip and celery", "BF Wings", null, null, false, new List<Filter>
+                new("-chickenwings.jpg", "Buffalo Chicken Wings", "Price: $15.00", "Crispy baked chicken wings in buffalo sauce with a side of dipping sauce and celery", "BF Wings", null, null, false, new List<Filter>
                     {
-                        Filter.GlutenFree, Filter.PeanutFree
+                        Filter.GlutenFree, Filter.PeanutFree, Filter.LactoseFree
 
                     }),
                 new("-fries.jpg", "French Fries", "Price: $11.25", "Crispy french fries with a side of ketchup",null,  new List<string>(){"Salt"}, null, false, new List<Filter>
