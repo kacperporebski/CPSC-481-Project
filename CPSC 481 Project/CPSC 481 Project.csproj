@@ -264,5 +264,8 @@
   <ItemGroup>
     <Resource Include="keyboard.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shrimp.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

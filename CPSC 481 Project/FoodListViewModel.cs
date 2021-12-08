@@ -141,6 +141,11 @@ namespace CPSC_481_Project
                         Filter.GlutenFree, Filter.PeanutFree, Filter.LactoseFree
 
                     }),
+                  new("shrimp.jpg", "Shrimp Salad", "Price: $16.00", "Shrimp topped with parsely, celery, served on a bed of lettuce", "Shrimp Sld", null, null, false, new List<Filter>
+                    {
+                        Filter.GlutenFree, Filter.PeanutFree, Filter.LactoseFree, Filter.NotSpicy
+
+                    }),
                 new("-fries.jpg", "French Fries", "Price: $11.25", "Crispy french fries with a side of ketchup",null,  new List<string>(){"Salt"}, null, false, new List<Filter>
                     {
                         Filter.LactoseFree, Filter.PeanutFree, Filter.NotSpicy // Not gluten free because the fryer could be contaminated with stuff that has gluten?
