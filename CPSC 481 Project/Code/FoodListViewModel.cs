@@ -141,7 +141,7 @@ namespace CPSC_481_Project
                         Filter.GlutenFree, Filter.PeanutFree, Filter.LactoseFree
 
                     }),
-                  new("../Resources/shrimp2.jpeg", "Shrimp Salad", "Price: $16.00", "Shrimp topped with parsely, celery, served on a bed of lettuce", "Shrimp Sld", null, null, false, new List<Filter>
+                  new("../Resources/shrimp2.jpeg", "Shrimp Salad", "Price: $16.00", "Shrimp topped with parsely, celery, served on a bed of lettuce", "Shrimp Sld", new List<string>(){"Shrimp", "Lettuce","Celery","Parsley"}, new List<string>{ "Spinach instead of lettuce"}, false, new List<Filter>
                     {
                         Filter.GlutenFree, Filter.PeanutFree, Filter.LactoseFree, Filter.NotSpicy
 
