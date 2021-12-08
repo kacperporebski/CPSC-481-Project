@@ -1,6 +1,9 @@
 GROUP 18 
 KACPER POREBSKI
 
+STARTUP:
+Navigate to bin/Release and open 'CPSC 481 Project.exe'
+
 BUGS AND WHAT TO AVOID:
 -If you click an item while the filter menu is open, it wont close. (Please avoid this)
 -There is no limit on the input for a persons name. (Please avoid very long inputs)
