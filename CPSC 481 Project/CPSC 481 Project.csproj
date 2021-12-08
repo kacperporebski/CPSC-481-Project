@@ -53,94 +53,94 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="Code\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CategoriesDropDown.xaml.cs">
+    <Compile Include="Code\CategoriesDropDown.xaml.cs">
       <DependentUpon>CategoriesDropDown.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FoodListViewModel.cs" />
-    <Compile Include="IngredientQuantity.cs" />
-    <Compile Include="MainWindowViewModel.cs" />
-    <Compile Include="FoodItem.xaml.cs">
+    <Compile Include="Code\FoodListViewModel.cs" />
+    <Compile Include="Code\IngredientQuantity.cs" />
+    <Compile Include="Code\MainWindowViewModel.cs" />
+    <Compile Include="Code\FoodItem.xaml.cs">
       <DependentUpon>FoodItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FoodItemView.cs" />
-    <Compile Include="FoodList.xaml.cs">
+    <Compile Include="Code\FoodItemView.cs" />
+    <Compile Include="Code\FoodList.xaml.cs">
       <DependentUpon>FoodList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ItemConfiguration.xaml.cs">
+    <Compile Include="Code\ItemConfiguration.xaml.cs">
       <DependentUpon>ItemConfiguration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyDialog.xaml.cs">
+    <Compile Include="Code\MyDialog.xaml.cs">
       <DependentUpon>MyDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyScrollViewer.cs" />
-    <Compile Include="OrderInfo.xaml.cs">
+    <Compile Include="Code\MyScrollViewer.cs" />
+    <Compile Include="Code\OrderInfo.xaml.cs">
       <DependentUpon>OrderInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrderInformation.cs" />
-    <Compile Include="OrderList.xaml.cs">
+    <Compile Include="Code\OrderInformation.cs" />
+    <Compile Include="Code\OrderList.xaml.cs">
       <DependentUpon>OrderList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrderSummary.cs" />
-    <Compile Include="OrderViewModel.cs" />
-    <Compile Include="PeopleConfig.xaml.cs">
+    <Compile Include="Code\OrderSummary.cs" />
+    <Compile Include="Code\OrderViewModel.cs" />
+    <Compile Include="Code\PeopleConfig.xaml.cs">
       <DependentUpon>PeopleConfig.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs" />
+    <Compile Include="Code\Person.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="RelayCommand.cs" />
-    <Compile Include="Ingredient.cs" />
-    <Compile Include="ThankYouScreen.xaml.cs">
+    <Compile Include="Code\RelayCommand.cs" />
+    <Compile Include="Code\Ingredient.cs" />
+    <Compile Include="Code\ThankYouScreen.xaml.cs">
       <DependentUpon>ThankYouScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="FoodItem.xaml">
+    <Page Include="Code\FoodItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FoodList.xaml">
+    <Page Include="Code\FoodList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ItemConfiguration.xaml">
+    <Page Include="Code\ItemConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Code\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="Code\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Code\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="CategoriesDropDown.xaml">
+    <Page Include="Code\CategoriesDropDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MyDialog.xaml">
+    <Page Include="Code\MyDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OrderInfo.xaml">
+    <Page Include="Code\OrderInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OrderList.xaml">
+    <Page Include="Code\OrderList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PeopleConfig.xaml">
+    <Page Include="Code\PeopleConfig.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ThankYouScreen.xaml">
+    <Page Include="Code\ThankYouScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,103 +172,104 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-Steak.jpg" />
+    <Resource Include="Resources\-Steak.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-R %281%29.jpg" />
+    <Resource Include="Resources\-R %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-NashvilleChicken.jpg" />
+    <Resource Include="Resources\-NashvilleChicken.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-ChickenTeriyaki.jpg" />
+    <Resource Include="Resources\-ChickenTeriyaki.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-spaghetti.jpg" />
+    <Resource Include="Resources\-spaghetti.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-tunapoke.jpg" />
+    <Resource Include="Resources\-tunapoke.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-icedtea.jpg" />
+    <Resource Include="Resources\-icedtea.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-pepsi.jpg" />
+    <Resource Include="Resources\-pepsi.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-rootbeer.jpg" />
+    <Resource Include="Resources\-rootbeer.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-7up.jpg" />
+    <Resource Include="Resources\-7up.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-dasani.jpg" />
+    <Resource Include="Resources\-dasani.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-coffee.jpg" />
+    <Resource Include="Resources\-coffee.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-hotchocolate.jpg" />
+    <Resource Include="Resources\-hotchocolate.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-applejuice.jpg" />
+    <Resource Include="Resources\-applejuice.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-orangejuice.jpg" />
+    <Resource Include="Resources\-orangejuice.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-chickenwings.jpg" />
+    <Resource Include="Resources\-chickenwings.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-fries.jpg" />
+    <Resource Include="Resources\-fries.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-yamfries.jpg" />
+    <Resource Include="Resources\-yamfries.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-garlicbread.jpg" />
+    <Resource Include="Resources\-garlicbread.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-potstickers.jpg" />
+    <Resource Include="Resources\-potstickers.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-calamari.jpeg" />
+    <Resource Include="Resources\-calamari.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-gticecream.jpg" />
+    <Resource Include="Resources\-gticecream.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-cheesecake.jpg" />
+    <Resource Include="Resources\-cheesecake.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-pie.jpg" />
+    <Resource Include="Resources\-pie.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-tiramisu.jpg" />
+    <Resource Include="Resources\-tiramisu.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-castella.jpg" />
+    <Resource Include="Resources\-castella.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-curry.jpg" />
+    <Resource Include="Resources\-curry.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-enchiladas.jpg" />
+    <Resource Include="Resources\-enchiladas.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="-peanutpie.jpg" />
+    <Resource Include="Resources\-peanutpie.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="cart.png" />
+    <Resource Include="Resources\cart.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="keyboard.jpg" />
+    <Resource Include="Resources\keyboard.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="shrimp2.jpeg" />
+    <Resource Include="Resources\shrimp2.jpeg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
