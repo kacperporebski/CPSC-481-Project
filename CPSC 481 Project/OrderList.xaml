@@ -19,51 +19,55 @@
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto"></RowDefinition>
+						<RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label Content="D I V E R SE" FontSize="35" FontFamily="Palatino Linotype" HorizontalAlignment="Center" />
 					<Button Content="B A C K" FontSize="20" FontFamily="Palatino Linotype" BorderThickness="1" BorderBrush="Black" Margin="0,0,1133,0" Click="Back_OnClick" />
 				</Grid>
             </Border>
 
-			<Label Grid.Row="0" Content="O R D E R  S U M  M A R Y" FontSize="30" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="465,66,507,0" Width="384"/>
-			<StackPanel Grid.Row="1" Margin="48,138,59,10">
-				<local:MyScrollViewer>
-					<ItemsControl x:Name="Items" ItemsSource="{Binding People}">
+			<Label Grid.Row="1" Content="O R D E R     S U M M A R Y" FontSize="30" FontFamily="Palatino Linotype" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,50,0,0"/>
+			<local:MyScrollViewer Grid.Row="1" Margin="48,138,59,10">
+                <ItemsControl x:Name="Items" ItemsSource="{Binding People}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="4" Rows="3"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>
-								<Button Background="WhiteSmoke">
+								<StackPanel Background="WhiteSmoke" Margin="0,10,20,0" HorizontalAlignment="Center">
 									<Grid>
 										<Grid.RowDefinitions>
 											<RowDefinition Height="30"/>
 											<RowDefinition Height="Auto"/>
-											<RowDefinition Height="30"/>
+											<RowDefinition Height="Auto"/>
 										</Grid.RowDefinitions>
-										<TextBlock Text ="{Binding Name}" TextDecorations="Underline" HorizontalAlignment="Center"/>
-										<ScrollViewer Grid.Row="1" x:Name="ScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Width="1227">
+										<TextBlock Text ="{Binding Name}" FontSize="25" TextDecorations="Underline" HorizontalAlignment="Center"/>
+										<local:MyScrollViewer Grid.Row="1" x:Name="ScrollViewer" Height="300" Width="Auto" VerticalScrollBarVisibility="Hidden">
 											<ItemsControl x:Name="Items" ItemsSource="{Binding Ordered.OrderInformation}">
 												<ItemsControl.ItemTemplate>
 													<DataTemplate>
 														<Grid>
 															<Grid.ColumnDefinitions>
-																<ColumnDefinition Width="1100"/>
+																<ColumnDefinition Width="250"/>
 																<ColumnDefinition/>
 															</Grid.ColumnDefinitions>
-															<TextBlock Grid.Column="0" Text="{Binding Item}"/>
-															<TextBlock Grid.Column="1"  Text="{Binding Price}"/>
+															<TextBlock Grid.Column="0" Text="{Binding Item}" FontSize="20" Margin="10,0,0,0" />
+															<TextBlock Grid.Column="1"  Text="{Binding Price}" FontSize="20"  Margin="0,0,10,0"/>
 														</Grid>
 													</DataTemplate>
 												</ItemsControl.ItemTemplate>
 											</ItemsControl>
-										</ScrollViewer>
-										<TextBlock Grid.Row="2" Text="Total Cost" VerticalAlignment="Center"/>
-                                        <TextBlock Grid.Row="2" Text="{Binding TotalCost}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+										</local:MyScrollViewer>
+										<TextBlock Grid.Row="2" Text="Total Cost" HorizontalAlignment="Left" FontSize="30" Margin="10,0,0,0"/>
+                                        <TextBlock Grid.Row="2" Text="{Binding TotalCost}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30" Margin="0,0,10,0"/>
 									</Grid>
-								</Button>
+								</StackPanel>
 							</DataTemplate>
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>
-				</local:MyScrollViewer>
-			</StackPanel>
+            </local:MyScrollViewer>
 
 			<Button Grid.Row="2" Content="P A Y " FontSize="25" FontFamily="Palatino Linotype" HorizontalAlignment="Center" BorderThickness="1.5" BorderBrush="Black" Click="Pay_OnClick" Width="340"/>
 		</Grid>
